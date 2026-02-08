@@ -498,57 +498,80 @@ const base = import.meta.env.BASE_URL;
       <!-- Interactive Map -->
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
       <style>
-        .map-icon { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); border: 2px solid rgba(255,255,255,0.8); }
-        .map-icon-home { background: #E07C3E; width: 40px; height: 40px; font-size: 20px; border-width: 3px; }
-        .map-icon-surf { background: #1A6B8A; width: 32px; height: 32px; }
-        .map-icon-food { background: #D97706; width: 32px; height: 32px; }
-        .map-icon-nature { background: #2D6A4F; width: 32px; height: 32px; }
-        .map-icon-stay { background: #7C3AED; width: 32px; height: 32px; }
-        .map-icon-town { background: #6B7280; width: 32px; height: 32px; }
-        .map-popup h3 { font-weight: 700; font-size: 14px; margin: 0 0 2px; color: #1a1a1a; }
+        .map-icon { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.5); border: 2.5px solid #fff; }
+        .map-icon-home { background: #E07C3E; width: 44px; height: 44px; font-size: 22px; border-width: 3px; animation: pulse-home 2s ease-in-out infinite; }
+        @keyframes pulse-home { 0%,100% { box-shadow: 0 0 0 0 rgba(224,124,62,0.5); } 50% { box-shadow: 0 0 0 12px rgba(224,124,62,0); } }
+        .map-icon-surf { background: #0EA5E9; width: 34px; height: 34px; }
+        .map-icon-food { background: #F59E0B; width: 34px; height: 34px; }
+        .map-icon-nature { background: #10B981; width: 34px; height: 34px; }
+        .map-icon-stay { background: #EC4899; width: 34px; height: 34px; }
+        .map-icon-town { background: #8B5CF6; width: 34px; height: 34px; }
+        .map-icon-beach { background: #F97316; width: 34px; height: 34px; }
+        .map-popup h3 { font-weight: 700; font-size: 14px; margin: 0 0 3px; color: #1a1a1a; }
         .map-popup p { font-size: 12px; margin: 0; color: #555; line-height: 1.4; }
-        .map-popup .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 9999px; margin-top: 4px; }
+        .map-popup .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 9999px; margin-top: 5px; }
         .tag-surf { background: #E0F2FE; color: #0369A1; }
         .tag-food { background: #FEF3C7; color: #92400E; }
         .tag-nature { background: #D1FAE5; color: #065F46; }
-        .tag-stay { background: #EDE9FE; color: #5B21B6; }
-        .tag-town { background: #F3F4F6; color: #374151; }
-        .leaflet-popup-content-wrapper { border-radius: 12px !important; }
+        .tag-stay { background: #FCE7F3; color: #9D174D; }
+        .tag-town { background: #EDE9FE; color: #5B21B6; }
+        .tag-beach { background: #FFEDD5; color: #9A3412; }
+        .leaflet-popup-content-wrapper { border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; }
         .leaflet-popup-content { margin: 10px 14px !important; }
+        .leaflet-popup-tip { box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important; }
+        .leaflet-control-zoom a { background: rgba(255,255,255,0.9) !important; color: #333 !important; }
       </style>
       <div class="mt-12 rounded-2xl overflow-hidden shadow-lg">
-        <div id="map" class="h-[28rem] sm:h-[32rem]"></div>
+        <div id="map" class="h-[28rem] sm:h-[34rem]"></div>
       </div>
       <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
       <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.430, -80.175], 13);
+          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.428, -80.170], 15);
 
           L.control.zoom({ position: 'topright' }).addTo(map);
 
-          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-            subdomains: 'abcd',
+          /* Esri World Imagery — free satellite tiles */
+          L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Imagery &copy; <a href="https://www.esri.com/">Esri</a>',
             maxZoom: 19
           }).addTo(map);
 
+          /* Road labels overlay so place names are readable */
+          L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 19, pane: 'overlayPane'
+          }).addTo(map);
+
           function icon(cls, emoji) {
-            return L.divIcon({ className: '', html: '<div class="map-icon ' + cls + '">' + emoji + '</div>', iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -18] });
+            return L.divIcon({ className: '', html: '<div class="map-icon ' + cls + '">' + emoji + '</div>', iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -19] });
           }
-          var homeIcon = L.divIcon({ className: '', html: '<div class="map-icon map-icon-home">🏠</div>', iconSize: [40, 40], iconAnchor: [20, 20], popupAnchor: [0, -22] });
+          var homeIcon = L.divIcon({ className: '', html: '<div class="map-icon map-icon-home">🏠</div>', iconSize: [44, 44], iconAnchor: [22, 22], popupAnchor: [0, -24] });
 
           var places = [
+            /* === YOUR DEVELOPMENT === */
             { lat: 7.436109, lng: -80.190583, icon: homeIcon, popup: '<div class="map-popup"><h3>🏡 Playa Venao Living</h3><p>Modern beachfront apartments<br>Your future home in paradise</p></div>', open: true },
-            { lat: 7.4285, lng: -80.1690, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf, beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
-            { lat: 7.4320, lng: -80.1780, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Eco Venao Surf School</h3><p>Lessons, board rentals & camps</p><span class="tag tag-surf">Surf</span></div>' },
-            { lat: 7.4340, lng: -80.1720, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>La Choza Restaurant</h3><p>Fresh seafood & local Panamanian cuisine</p><span class="tag tag-food">Dining</span></div>' },
-            { lat: 7.4295, lng: -80.1635, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Venao Beach Café</h3><p>Coffee, smoothies & healthy bowls</p><span class="tag tag-food">Café</span></div>' },
-            { lat: 7.4310, lng: -80.1670, icon: icon('map-icon-nature','🧘'), popup: '<div class="map-popup"><h3>Yoga & Wellness Retreat</h3><p>Daily classes with ocean views</p><span class="tag tag-nature">Wellness</span></div>' },
-            { lat: 7.4400, lng: -80.1550, icon: icon('map-icon-nature','🌊'), popup: '<div class="map-popup"><h3>Las Escobas Waterfall</h3><p>Jungle hike to a hidden waterfall</p><span class="tag tag-nature">Nature</span></div>' },
-            { lat: 7.4260, lng: -80.1750, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Hostel Playa Venao</h3><p>Co-working, social hub & accommodation</p><span class="tag tag-stay">Stay</span></div>' },
-            { lat: 7.4330, lng: -80.1640, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Eco Venao Lodge</h3><p>Eco-lodge, pool & jungle setting</p><span class="tag tag-stay">Stay</span></div>' },
-            { lat: 7.5267, lng: -80.1707, icon: icon('map-icon-town','🏘️'), popup: '<div class="map-popup"><h3>Pedasí</h3><p>Charming town — shops, restaurants & services</p><span class="tag tag-town">Town — 30 min</span></div>' },
-            { lat: 7.4370, lng: -80.1850, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' }
+
+            /* === SURF === */
+            { lat: 7.4220, lng: -80.1615, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf — beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4380, lng: -80.1660, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Mirador | Eco Venao</h3><p>Surf school, lessons & board rentals</p><span class="tag tag-surf">Surf</span></div>' },
+
+            /* === FOOD & DRINK === */
+            { lat: 7.4340, lng: -80.1575, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>Wao Jungle, Playa Venao</h3><p>Restaurant & bar in jungle setting</p><span class="tag tag-food">Dining</span></div>' },
+            { lat: 7.4320, lng: -80.1880, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Casa de la Salida del Sol</h3><p>Beachfront café with breakfast & smoothies</p><span class="tag tag-food">Café</span></div>' },
+
+            /* === STAYS === */
+            { lat: 7.4350, lng: -80.1530, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Playa Venao Hotel Resort</h3><p>Beachfront resort & restaurant</p><span class="tag tag-stay">Hotel</span></div>' },
+            { lat: 7.4310, lng: -80.1510, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Playa Venao</h3><p>Co-working, social hub & hostel</p><span class="tag tag-stay">Hostel</span></div>' },
+            { lat: 7.4260, lng: -80.1470, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Villa Marina Hotel</h3><p>Boutique hotel on the bay</p><span class="tag tag-stay">Hotel</span></div>' },
+            { lat: 7.4230, lng: -80.1440, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Azuero Lodge</h3><p>Eco-lodge, pool & tropical gardens</p><span class="tag tag-stay">Lodge</span></div>' },
+
+            /* === NATURE === */
+            { lat: 7.4330, lng: -80.1640, icon: icon('map-icon-nature','🌿'), popup: '<div class="map-popup"><h3>Las Escobas del Venado</h3><p>Jungle trails & waterfall hike</p><span class="tag tag-nature">Nature</span></div>' },
+            { lat: 7.4370, lng: -80.1850, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' },
+
+            /* === NEARBY BEACHES === */
+            { lat: 7.4170, lng: -80.1950, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Playa Madroñito</h3><p>Secluded beach — quiet & pristine</p><span class="tag tag-beach">Beach</span></div>' },
+            { lat: 7.4130, lng: -80.1350, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Bahía de Achotines</h3><p>Sheltered bay south of Venao</p><span class="tag tag-beach">Beach</span></div>' }
           ];
 
           places.forEach(function(p) {
