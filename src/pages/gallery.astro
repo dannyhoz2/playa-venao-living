@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    name: 'The Land',
+    id: 'land',
+    images: [
+      { src: '/images/land/01-our-land-topdown.jpeg', alt: 'Top-down aerial view of our development land' },
+      { src: '/images/land/02-our-land-with-surroundings.jpeg', alt: 'Aerial view of our land with surrounding area' },
+      { src: '/images/land/03-aerial-wide-coastline.jpeg', alt: 'Wide aerial view of the Playa Venao coastline' },
+      { src: '/images/land/04-aerial-land-angled.jpeg', alt: 'Angled aerial view of the development site' },
+    ]
+  },
+  {
+    name: 'The Lifestyle',
+    id: 'lifestyle',
+    images: [
+      { src: '/images/lifestyle/01-surfers-walking-to-ocean.jpeg', alt: 'Surfers walking to the ocean' },
+      { src: '/images/lifestyle/02-surfer-panama-flag-board.jpeg', alt: 'Surfer with Panama flag surfboard' },
+      { src: '/images/lifestyle/03-mother-child-beach-walk.jpeg', alt: 'Mother and child walking on the beach' },
+      { src: '/images/lifestyle/04-surfer-action-wave.jpeg', alt: 'Surfer riding a wave' },
+      { src: '/images/lifestyle/05-father-child-sunset-surf.jpeg', alt: 'Father and child at sunset with surfboards' },
+      { src: '/images/lifestyle/06-surfer-girls-walking.jpeg', alt: 'Surfer girls walking on the beach' },
+      { src: '/images/lifestyle/07-surfers-celebrating.jpeg', alt: 'Surfers celebrating together' },
+      { src: '/images/lifestyle/01-beach-football-night.jpeg', alt: 'Beach football game at night' },
+      { src: '/images/lifestyle/02-yoga-outdoor-class.jpeg', alt: 'Outdoor yoga class' },
+      { src: '/images/lifestyle/01-waterfall-rocks.jpeg', alt: 'Waterfall in the jungle' },
+      { src: '/images/lifestyle/02-creek-forest.jpeg', alt: 'Creek running through tropical forest' },
+    ]
+  },
+  {
+    name: 'The Plans',
+    id: 'plans',
+    images: [
+      { src: '/images/plans/01-apartment-type-A-floorplan.jpg', alt: 'Type A apartment floor plan' },
+      { src: '/images/plans/02-apartment-type-B-floorplan.jpg', alt: 'Type B apartment floor plan' },
+      { src: '/images/plans/03-first-floor-site-plan.jpg', alt: 'First floor site plan' },
+      { src: '/images/plans/06-front-rear-elevations-section.jpg', alt: 'Building elevations and section' },
+    ]
+  }
+];
+---
+
+<BaseLayout title="Gallery — Playa Venao Living" description="Browse photos of the development site, Playa Venao lifestyle, and architectural plans for our beachfront apartments in Panama.">
+
+  <!-- Hero -->
+  <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/land/02-our-land-with-surroundings.jpeg" alt="Aerial view of Playa Venao" class="h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+    </div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8 py-28">
+      <p class="text-sm font-semibold uppercase tracking-widest text-ocean-300">Gallery</p>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        See Playa Venao
+      </h1>
+      <p class="mx-auto mt-6 max-w-xl text-lg text-white/80">
+        The land, the beach, the lifestyle, and the plans. Explore the project through our photo gallery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="py-6 bg-white border-b border-gray-200 sticky top-16 z-30">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-2">
+        <button class="gallery-filter active rounded-full px-5 py-2 text-sm font-semibold bg-ocean-700 text-white transition-all" data-filter="all">
+          All Photos
+        </button>
+        {categories.map(cat => (
+          <button class="gallery-filter rounded-full px-5 py-2 text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" data-filter={cat.id}>
+            {cat.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="py-12 sm:py-16 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      {categories.map(cat => (
+        <div class="gallery-category mb-16 last:mb-0" data-category={cat.id}>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">{cat.name}</h2>
+          <div class={`grid gap-4 ${cat.id === 'plans' ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'}`}>
+            {cat.images.map(img => (
+              <div class="gallery-item group cursor-pointer overflow-hidden rounded-xl" data-src={img.src} data-alt={img.alt}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  class={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${cat.id === 'plans' ? 'h-auto' : 'h-56 sm:h-64'}`}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white/80 hover:text-white p-2 z-10">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 text-white/80 hover:text-white p-2 z-10">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+    <button id="lightbox-next" class="absolute right-4 text-white/80 hover:text-white p-2 z-10">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[90vw] object-contain" />
+    <p id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-sm text-white/70"></p>
+  </div>
+
+  <script>
+    // Category filter
+    const filterBtns = document.querySelectorAll('.gallery-filter');
+    const cats = document.querySelectorAll('.gallery-category');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-ocean-700', 'text-white');
+          b.classList.add('bg-gray-100', 'text-gray-600');
+        });
+        btn.classList.add('bg-ocean-700', 'text-white');
+        btn.classList.remove('bg-gray-100', 'text-gray-600');
+
+        cats.forEach(cat => {
+          if (filter === 'all' || cat.getAttribute('data-category') === filter) {
+            cat.classList.remove('hidden');
+          } else {
+            cat.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const items = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+    const allImages: {src: string; alt: string}[] = [];
+
+    items.forEach((item, i) => {
+      const src = item.getAttribute('data-src') || '';
+      const alt = item.getAttribute('data-alt') || '';
+      allImages.push({src, alt});
+
+      item.addEventListener('click', () => {
+        currentIndex = i;
+        showLightbox();
+      });
+    });
+
+    function showLightbox() {
+      if (!lightbox || !lightboxImg || !lightboxCaption) return;
+      lightboxImg.src = allImages[currentIndex].src;
+      lightboxImg.alt = allImages[currentIndex].alt;
+      lightboxCaption.textContent = allImages[currentIndex].alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox-close')?.addEventListener('click', hideLightbox);
+    document.getElementById('lightbox-prev')?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+      showLightbox();
+    });
+    document.getElementById('lightbox-next')?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % allImages.length;
+      showLightbox();
+    });
+
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) hideLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('hidden')) return;
+      if (e.key === 'Escape') hideLightbox();
+      if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+        showLightbox();
+      }
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % allImages.length;
+        showLightbox();
+      }
+    });
+  </script>
+
+</BaseLayout>

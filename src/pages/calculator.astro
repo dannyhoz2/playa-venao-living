@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RoiCalculator from '../components/RoiCalculator.astro';
+---
+
+<BaseLayout title="Investment Calculator — Playa Venao Living" description="Calculate your potential return on investment for a Playa Venao Living apartment.">
+  <!-- Page Header -->
+  <section class="bg-emerald-900 text-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">
+          Calculate Your Returns
+        </h1>
+        <p class="mt-4 text-lg leading-8 text-emerald-100">
+          See how a Playa Venao apartment can work as an investment. Adjust the parameters
+          below to model different scenarios and explore your potential returns.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Component -->
+  <div class="bg-gray-50">
+    <RoiCalculator />
+  </div>
+</BaseLayout>

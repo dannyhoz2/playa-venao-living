@@ -1,0 +1,1089 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Playa Venao Living — Modern Beachfront Apartments in Panama">
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION                                 -->
+  <!-- ============================================ -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/land/03-aerial-wide-coastline.jpeg"
+        alt="Aerial view of Playa Venao coastline"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
+        Live Where the Ocean<br />Meets the Jungle
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-white/80 sm:text-xl leading-relaxed">
+        Modern beachfront apartments in Panama's most exciting surf town. Starting from $XXX,XXX.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#residences"
+          class="w-full sm:w-auto rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white shadow-lg hover:bg-ocean-500 transition-all duration-200 hover:shadow-xl"
+        >
+          Explore Residences
+        </a>
+        <a
+          href="/invest#roi-calculator"
+          class="w-full sm:w-auto rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white hover:bg-white/20 transition-all duration-200"
+        >
+          Calculate Your Returns
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div class="flex flex-col items-center gap-2 text-white/60">
+        <span class="text-xs uppercase tracking-widest">Scroll</span>
+        <div class="h-10 w-6 rounded-full border-2 border-white/30 flex justify-center pt-2">
+          <div class="h-2 w-1 rounded-full bg-white/60 animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- VISION SECTION                               -->
+  <!-- ============================================ -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">The Vision</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          A Community Built for Living
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Playa Venao Living is a modern apartment complex designed around a central pool courtyard, with a U-shaped layout that embraces the tropical breeze and fosters a genuine sense of community. Every unit faces the gardens and pool, creating a resort-like atmosphere you get to call home.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-10 sm:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="text-center group">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-ocean-50 text-ocean-700 group-hover:bg-ocean-100 transition-colors">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
+            </svg>
+          </div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">Designed for Life</h3>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Modern tropical architecture with pitched roofs, exposed beams, gallery walkways, and second-floor terraces. Every detail serves both beauty and the climate.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="text-center group">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-ocean-50 text-ocean-700 group-hover:bg-ocean-100 transition-colors">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            </svg>
+          </div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">Steps from the Surf</h3>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Walk to world-class waves at Playa Venao, one of Central America's top surf destinations. Year-round swells, warm water, and a laid-back beach scene at your doorstep.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="text-center group">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-ocean-50 text-ocean-700 group-hover:bg-ocean-100 transition-colors">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.941" />
+            </svg>
+          </div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">Smart Investment</h3>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Projected rental yields of 8-12% in one of Latin America's fastest-growing beach markets. Panama's tax benefits and USD economy make the numbers even more compelling.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- RESIDENCES SECTION                           -->
+  <!-- ============================================ -->
+  <section id="residences" class="py-20 sm:py-28 bg-sand-50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">The Residences</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          Thoughtfully Designed Spaces
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Each apartment balances efficient modern living with the openness that tropical life demands. High ceilings, natural ventilation, and indoor-outdoor flow define every unit.
+        </p>
+      </div>
+
+      <!-- Type A Apartment -->
+      <div class="mt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="/images/plans/01-apartment-type-A-floorplan.jpg"
+              alt="Type A apartment floor plan - 46 square meter one bedroom"
+              class="w-full rounded-2xl shadow-lg"
+            />
+          </div>
+          <div>
+            <span class="inline-block rounded-full bg-ocean-100 px-4 py-1.5 text-xs font-semibold text-ocean-800 uppercase tracking-wider">Type A Apartment</span>
+            <h3 class="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">The Essentials, Perfected</h3>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              At approximately 46 square meters, Type A delivers everything you need in a space that feels far larger than its footprint. The open-plan kitchen and living area flows naturally toward natural light, while the bedroom offers a private retreat with ample closet space.
+            </p>
+            <ul class="mt-6 space-y-3">
+              <li class="flex items-center gap-3 text-gray-700">
+                <svg class="h-5 w-5 text-ocean-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                1 Bedroom, 1 Bathroom
+              </li>
+              <li class="flex items-center gap-3 text-gray-700">
+                <svg class="h-5 w-5 text-ocean-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                Open-plan kitchen and living area
+              </li>
+              <li class="flex items-center gap-3 text-gray-700">
+                <svg class="h-5 w-5 text-ocean-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                Built-in closets and washer/dryer space
+              </li>
+              <li class="flex items-center gap-3 text-gray-700">
+                <svg class="h-5 w-5 text-ocean-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                Gallery walkway or second-floor terrace access
+              </li>
+              <li class="flex items-center gap-3 text-gray-700">
+                <svg class="h-5 w-5 text-ocean-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                Approximately 46 m&sup2; (495 sq ft)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type B Teaser -->
+      <div class="mt-16 rounded-2xl bg-ocean-800 p-8 sm:p-12 text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-300">Coming Soon</p>
+        <h3 class="mt-3 text-2xl font-bold text-white sm:text-3xl">Type B Apartments</h3>
+        <p class="mt-4 max-w-2xl mx-auto text-ocean-100 leading-relaxed">
+          We are currently redesigning the Type B units to maximize space and value. These larger units will offer additional bedrooms and flexible layouts to suit families, longer stays, or those who simply want more room. Stay tuned for details.
+        </p>
+        <a href="#contact" class="mt-6 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-ocean-800 hover:bg-ocean-50 transition-colors">
+          Register Your Interest
+        </a>
+      </div>
+
+      <!-- Site Plan -->
+      <div class="mt-20">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">The Building</p>
+          <h3 class="mt-3 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            U-Shaped Around the Pool
+          </h3>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            The complex is arranged in a U-shape around a central pool courtyard on a 60m x 55m lot. Two stories of apartments face inward toward landscaped gardens, the swimming pool, pool house, and communal deck. The design promotes cross-ventilation, natural light, and a sense of shared community.
+          </p>
+        </div>
+        <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <img
+            src="/images/plans/03-first-floor-site-plan.jpg"
+            alt="First floor site plan showing U-shaped building layout around central pool"
+            class="w-full rounded-2xl shadow-lg"
+          />
+          <img
+            src="/images/plans/06-front-rear-elevations-section.jpg"
+            alt="Building elevation showing front and rear views with pitched roofs"
+            class="w-full rounded-2xl shadow-lg"
+          />
+        </div>
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          <div class="rounded-xl bg-white p-6 shadow-sm">
+            <p class="text-3xl font-bold text-ocean-700">2</p>
+            <p class="mt-1 text-sm text-gray-600">Stories</p>
+          </div>
+          <div class="rounded-xl bg-white p-6 shadow-sm">
+            <p class="text-3xl font-bold text-ocean-700">20-50</p>
+            <p class="mt-1 text-sm text-gray-600">Units</p>
+          </div>
+          <div class="rounded-xl bg-white p-6 shadow-sm">
+            <p class="text-3xl font-bold text-ocean-700">60x55</p>
+            <p class="mt-1 text-sm text-gray-600">Meters Lot</p>
+          </div>
+          <div class="rounded-xl bg-white p-6 shadow-sm">
+            <p class="text-3xl font-bold text-ocean-700">U</p>
+            <p class="mt-1 text-sm text-gray-600">Shape Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- LIFESTYLE SECTION                            -->
+  <!-- ============================================ -->
+  <section id="lifestyle" class="py-20 sm:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">The Lifestyle</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          More Than a Home. A Way of Life.
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Playa Venao is not just a beach. It is a thriving community of surfers, yogis, families, and adventurers from around the world. This is where you slow down and start living.
+        </p>
+      </div>
+
+      <!-- Surf Culture -->
+      <div class="mt-16">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Surf Culture</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img src="/images/lifestyle/01-surfers-walking-to-ocean.jpeg" alt="Surfers walking to the ocean at Playa Venao" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/02-surfer-panama-flag-board.jpeg" alt="Surfer with Panama flag surfboard" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/04-surfer-action-wave.jpeg" alt="Surfer riding a wave" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/06-surfer-girls-walking.jpeg" alt="Surfer girls walking on beach" class="rounded-xl object-cover h-64 w-full" />
+        </div>
+        <p class="mt-4 text-gray-600 max-w-3xl">
+          Playa Venao delivers consistent year-round waves for every skill level, from gentle beach breaks for beginners to powerful swells for experienced surfers. The water stays warm all year, and the local surf community is welcoming, vibrant, and genuinely international.
+        </p>
+      </div>
+
+      <!-- Wellness & Nature -->
+      <div class="mt-14">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Wellness & Nature</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="/images/lifestyle/02-yoga-outdoor-class.jpeg" alt="Outdoor yoga class near the beach" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/01-waterfall-rocks.jpeg" alt="Waterfall in the jungle near Playa Venao" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/02-creek-forest.jpeg" alt="Creek running through tropical forest" class="rounded-xl object-cover h-64 w-full" />
+        </div>
+        <p class="mt-4 text-gray-600 max-w-3xl">
+          Beyond the beach, the Azuero Peninsula is rich with jungle waterfalls, forest trails, and wildlife. Yoga retreats dot the area, whale watching runs from June to November, and sea turtle nesting season transforms the beaches into a natural spectacle. Nature is not a weekend trip here; it is your daily life.
+        </p>
+      </div>
+
+      <!-- Community -->
+      <div class="mt-14">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Community</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img src="/images/lifestyle/01-beach-football-night.jpeg" alt="Beach football game at night" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/07-surfers-celebrating.jpeg" alt="Surfers celebrating together" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/03-mother-child-beach-walk.jpeg" alt="Mother and child walking on the beach" class="rounded-xl object-cover h-64 w-full" />
+          <img src="/images/lifestyle/05-father-child-sunset-surf.jpeg" alt="Father and child at sunset surf" class="rounded-xl object-cover h-64 w-full" />
+        </div>
+        <p class="mt-4 text-gray-600 max-w-3xl">
+          What makes Playa Venao truly special is the community. Beach football under the lights, sunset sessions with friends, family afternoons by the shore. You will find a mix of locals, expats, nomads, and travelers who share a love for the simple things. It is easy to make friends here; it is hard to leave.
+        </p>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/lifestyle" class="inline-flex items-center gap-2 rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white hover:bg-ocean-500 transition-colors">
+          Discover the Full Lifestyle
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOR EVERY BUYER SECTION                      -->
+  <!-- ============================================ -->
+  <section class="py-20 sm:py-28 bg-sand-50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">For You</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          Whatever Brought You Here, We Built It for You
+        </h2>
+      </div>
+
+      <!-- Tabs -->
+      <div class="mt-12">
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4" role="tablist">
+          <button class="buyer-tab active rounded-full px-5 py-2.5 text-sm font-semibold transition-all bg-ocean-700 text-white" data-tab="retiree" role="tab" aria-selected="true">
+            Retire in Paradise
+          </button>
+          <button class="buyer-tab rounded-full px-5 py-2.5 text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100" data-tab="investor" role="tab" aria-selected="false">
+            Invest Smart
+          </button>
+          <button class="buyer-tab rounded-full px-5 py-2.5 text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100" data-tab="nomad" role="tab" aria-selected="false">
+            Work From Paradise
+          </button>
+          <button class="buyer-tab rounded-full px-5 py-2.5 text-sm font-semibold transition-all bg-white text-gray-600 hover:bg-gray-100" data-tab="local" role="tab" aria-selected="false">
+            Your Beach Escape
+          </button>
+        </div>
+
+        <!-- Tab panels -->
+        <div class="mt-10">
+          <!-- RETIREE -->
+          <div id="panel-retiree" class="buyer-panel" role="tabpanel">
+            <div class="rounded-2xl bg-white p-8 sm:p-12 shadow-sm">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Your Retirement, Reimagined</h3>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    Panama has been ranked among the top retirement destinations in the world for over a decade, and for good reason. The Pensionado visa program offers one of the most generous retiree packages anywhere: discounts on healthcare, dining, entertainment, flights, and more. And it is available to anyone with a pension or retirement income of $1,000/month or more.
+                  </p>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    Playa Venao combines the security and amenities you need with the lifestyle you deserve. A walkable community, a warm climate year-round, excellent healthcare access in nearby Chitre, and a cost of living 30-50% lower than the US, Canada, or Europe.
+                  </p>
+                </div>
+                <div class="space-y-4">
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Pensionado Visa</p>
+                    <p class="text-sm text-gray-600 mt-1">$1,000/month pension qualifies you for Panama's world-famous retiree visa with extensive discounts.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Lower Cost of Living</p>
+                    <p class="text-sm text-gray-600 mt-1">Spend 30-50% less on daily expenses compared to North America or Europe, without sacrificing quality.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Healthcare Access</p>
+                    <p class="text-sm text-gray-600 mt-1">Modern hospitals and clinics in Chitre (2.5 hrs). Panama City offers world-class medical facilities.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Community & Safety</p>
+                    <p class="text-sm text-gray-600 mt-1">A growing expat community, friendly locals, and one of the safest regions in Central America.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INVESTOR -->
+          <div id="panel-investor" class="buyer-panel hidden" role="tabpanel">
+            <div class="rounded-2xl bg-white p-8 sm:p-12 shadow-sm">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Numbers That Work While You Sleep</h3>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    Playa Venao is at the inflection point that smart investors recognize: growing tourism, limited supply, improving infrastructure, and a community that attracts high-spending visitors year-round. Short-term rental demand is strong and growing, driven by surfers, yoga retreats, and the remote-work movement.
+                  </p>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    With projected annual rental income of $14,000-$22,000 per unit and property appreciation of 5-10% per year, the returns stack up favorably against comparable markets. Add Panama's 20-year property tax exemption for new construction and the USD-based economy, and the investment case is compelling.
+                  </p>
+                  <a href="/invest" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ocean-700 hover:text-ocean-600">
+                    View Full Investment Analysis
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  </a>
+                </div>
+                <div>
+                  <div class="rounded-xl bg-ocean-50 p-6">
+                    <h4 class="font-semibold text-ocean-800 mb-4">Projected Returns</h4>
+                    <div class="space-y-3">
+                      <div class="flex justify-between items-center border-b border-ocean-200 pb-2">
+                        <span class="text-sm text-gray-600">Rental Yield</span>
+                        <span class="text-sm font-bold text-ocean-800">8-12% / year</span>
+                      </div>
+                      <div class="flex justify-between items-center border-b border-ocean-200 pb-2">
+                        <span class="text-sm text-gray-600">Annual Rental Income</span>
+                        <span class="text-sm font-bold text-ocean-800">$14K-$22K</span>
+                      </div>
+                      <div class="flex justify-between items-center border-b border-ocean-200 pb-2">
+                        <span class="text-sm text-gray-600">Appreciation</span>
+                        <span class="text-sm font-bold text-ocean-800">5-10% / year</span>
+                      </div>
+                      <div class="flex justify-between items-center border-b border-ocean-200 pb-2">
+                        <span class="text-sm text-gray-600">Property Tax</span>
+                        <span class="text-sm font-bold text-ocean-800">Exempt 20 years</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-600">Currency</span>
+                        <span class="text-sm font-bold text-ocean-800">USD</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DIGITAL NOMAD -->
+          <div id="panel-nomad" class="buyer-panel hidden" role="tabpanel">
+            <div class="rounded-2xl bg-white p-8 sm:p-12 shadow-sm">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Your Office Has an Ocean View</h3>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    Imagine finishing a meeting, grabbing your board, and catching waves on your lunch break. That is the reality for digital nomads in Playa Venao. Starlink satellite internet has transformed connectivity here, and a growing community of remote workers has established co-working-friendly spaces in the area.
+                  </p>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    Playa Venao Living apartments are designed with remote work in mind: reliable internet infrastructure, comfortable living spaces, and a community that understands the work-life balance you are looking for. Monthly and extended-stay rental rates make it easy to try before you buy.
+                  </p>
+                </div>
+                <div class="space-y-4">
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Starlink Internet</p>
+                    <p class="text-sm text-gray-600 mt-1">High-speed satellite internet available throughout the development. Work calls, video conferences, and uploads handled with ease.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Surf Breaks on Lunch</p>
+                    <p class="text-sm text-gray-600 mt-1">The beach is a short walk away. Sneak in a session between meetings and get back to work refreshed.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Nomad Community</p>
+                    <p class="text-sm text-gray-600 mt-1">A growing group of remote workers, entrepreneurs, and creatives. Co-working meetups, community events, and genuine friendships.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Flexible Stays</p>
+                    <p class="text-sm text-gray-600 mt-1">Monthly rental options available. Try the lifestyle before committing to a purchase.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOCAL PANAMANIAN -->
+          <div id="panel-local" class="buyer-panel hidden" role="tabpanel">
+            <div class="rounded-2xl bg-white p-8 sm:p-12 shadow-sm">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Tu Escape a la Playa</h3>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    Playa Venao has become one of Panama's most sought-after beach destinations, and this is your chance to own a piece of it. Whether you are looking for a weekend getaway from the city, a rental investment, or a future retirement spot, these modern apartments offer a quality of design and amenities that stand apart from typical beach developments.
+                  </p>
+                  <p class="mt-4 text-gray-600 leading-relaxed">
+                    The U-shaped design around the pool creates a resort-like community feel. Modern architecture with traditional touches, strong construction, and thoughtful layouts make these apartments both a pleasure to use and a solid long-term asset.
+                  </p>
+                </div>
+                <div class="space-y-4">
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Weekend Getaway</p>
+                    <p class="text-sm text-gray-600 mt-1">5.5 hours from Panama City, or a short flight to Pedasi's regional airport. Your beach apartment awaits every weekend.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Top Surf Destination</p>
+                    <p class="text-sm text-gray-600 mt-1">Playa Venao is Panama's surf capital. Consistent waves, warm water, and a vibrant beach scene all year round.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Modern Design</p>
+                    <p class="text-sm text-gray-600 mt-1">High-quality tropical architecture with pool, communal areas, and thoughtful finishes. Not your typical beach condo.</p>
+                  </div>
+                  <div class="rounded-xl bg-ocean-50 p-5">
+                    <p class="text-sm font-semibold text-ocean-800">Rental Income</p>
+                    <p class="text-sm text-gray-600 mt-1">When you are not there, your apartment earns. Strong short-term rental demand from tourists and nomads.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- LOCATION SECTION                             -->
+  <!-- ============================================ -->
+  <section id="location" class="py-20 sm:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">The Location</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          The Southern Tip of Paradise
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Playa Venao sits on the Pacific coast of the Azuero Peninsula, at the southern tip of Panama. It is far enough from the city to feel like an escape, yet connected enough that everything you need is within reach.
+        </p>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="mt-12 rounded-2xl overflow-hidden shadow-lg">
+        <div id="map" class="h-80 sm:h-96 bg-ocean-100 flex items-center justify-center">
+          <div class="text-center text-ocean-600">
+            <svg class="h-12 w-12 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+            <p class="text-sm font-medium">Interactive map coming soon</p>
+            <p class="text-xs text-ocean-500 mt-1">Playa Venao, Azuero Peninsula, Panama</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Distances -->
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div class="text-center rounded-xl bg-sand-50 p-5">
+          <svg class="h-6 w-6 mx-auto text-ocean-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+          <p class="mt-2 text-sm font-bold text-gray-900">Beach</p>
+          <p class="text-xs text-gray-500">Walking distance</p>
+        </div>
+        <div class="text-center rounded-xl bg-sand-50 p-5">
+          <svg class="h-6 w-6 mx-auto text-ocean-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" /></svg>
+          <p class="mt-2 text-sm font-bold text-gray-900">Pedasi</p>
+          <p class="text-xs text-gray-500">30 min drive</p>
+        </div>
+        <div class="text-center rounded-xl bg-sand-50 p-5">
+          <svg class="h-6 w-6 mx-auto text-ocean-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" /></svg>
+          <p class="mt-2 text-sm font-bold text-gray-900">Chitre</p>
+          <p class="text-xs text-gray-500">2.5 hrs (hospital)</p>
+        </div>
+        <div class="text-center rounded-xl bg-sand-50 p-5">
+          <svg class="h-6 w-6 mx-auto text-ocean-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" /></svg>
+          <p class="mt-2 text-sm font-bold text-gray-900">Panama City</p>
+          <p class="text-xs text-gray-500">5.5 hrs drive</p>
+        </div>
+        <div class="text-center rounded-xl bg-sand-50 p-5">
+          <svg class="h-6 w-6 mx-auto text-ocean-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" /></svg>
+          <p class="mt-2 text-sm font-bold text-gray-900">Tocumen Airport</p>
+          <p class="text-xs text-gray-500">6 hrs drive</p>
+        </div>
+        <div class="text-center rounded-xl bg-sand-50 p-5">
+          <svg class="h-6 w-6 mx-auto text-ocean-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+          <p class="mt-2 text-sm font-bold text-gray-900">Climate</p>
+          <p class="text-xs text-gray-500">25-32&deg;C year-round</p>
+        </div>
+      </div>
+
+      <!-- Getting Here & Climate -->
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="rounded-2xl bg-sand-50 p-8">
+          <h3 class="text-lg font-bold text-gray-900">Getting Here</h3>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            Most visitors fly into Tocumen International Airport (PTY) in Panama City, then drive the scenic 5.5-hour route through the interior to the Azuero Peninsula. A regional airport in Pedasi is also available for charter and small aircraft. The drive itself passes through charming towns, rolling farmland, and lush countryside.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-sand-50 p-8">
+          <h3 class="text-lg font-bold text-gray-900">Year-Round Sunshine</h3>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+            The Azuero Peninsula enjoys over 2,500 hours of sunshine per year. The dry season runs from December to April with virtually no rain. The green season (May-November) brings afternoon showers that keep the landscape lush, while mornings remain sunny and beautiful.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- AMENITIES SECTION                            -->
+  <!-- ============================================ -->
+  <section id="amenities" class="py-20 sm:py-28 bg-ocean-900 text-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-300">Amenities</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+          Everything You Need, Nothing You Don't
+        </h2>
+        <p class="mt-6 text-lg text-white/70 leading-relaxed">
+          Designed with both residents and guests in mind, the community amenities create spaces for relaxation, connection, and everyday comfort.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-14 grid max-w-5xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Amenity cards -->
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+          <h4 class="mt-4 font-semibold">Swimming Pool</h4>
+          <p class="mt-2 text-sm text-white/60">Central courtyard pool as the heart of the community.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" /></svg>
+          <h4 class="mt-4 font-semibold">Pool House & Deck</h4>
+          <p class="mt-2 text-sm text-white/60">Covered social area with seating, shade, and gathering space.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+          <h4 class="mt-4 font-semibold">Tropical Gardens</h4>
+          <p class="mt-2 text-sm text-white/60">Landscaped grounds with native plants and shaded walkways.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+          <h4 class="mt-4 font-semibold">Gallery Walkways</h4>
+          <p class="mt-2 text-sm text-white/60">Covered corridors connecting all units with shade and shelter.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" /></svg>
+          <h4 class="mt-4 font-semibold">Second Floor Terraces</h4>
+          <p class="mt-2 text-sm text-white/60">Private terraces for upper-floor units with garden and pool views.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+          <h4 class="mt-4 font-semibold">Pitched Roof Design</h4>
+          <p class="mt-2 text-sm text-white/60">Traditional pitched roofs with exposed beams for ventilation and character.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>
+          <h4 class="mt-4 font-semibold">Amenities Room</h4>
+          <p class="mt-2 text-sm text-white/60">Shared multipurpose space for events, meetings, and community activities.</p>
+        </div>
+        <div class="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors">
+          <svg class="h-8 w-8 text-ocean-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+          <h4 class="mt-4 font-semibold">Modern Tropical Style</h4>
+          <p class="mt-2 text-sm text-white/60">Contemporary design that honors the tropics. Built for climate, beauty, and longevity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PANAMA BENEFITS SECTION                      -->
+  <!-- ============================================ -->
+  <section id="panama-benefits" class="py-20 sm:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">Why Panama</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          The Smartest Place to Own Property
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Panama is not just a beautiful country to live in. It is one of the most investor-friendly, tax-advantageous, and legally transparent places for foreign property ownership in the Americas.
+        </p>
+      </div>
+
+      <!-- Big stats -->
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div class="rounded-2xl bg-ocean-50 p-8">
+          <p class="text-4xl font-bold text-ocean-800">USD</p>
+          <p class="mt-2 text-sm text-gray-600">Official currency. No exchange risk.</p>
+        </div>
+        <div class="rounded-2xl bg-ocean-50 p-8">
+          <p class="text-4xl font-bold text-ocean-800">20 yr</p>
+          <p class="mt-2 text-sm text-gray-600">Property tax exemption for new builds.</p>
+        </div>
+        <div class="rounded-2xl bg-ocean-50 p-8">
+          <p class="text-4xl font-bold text-ocean-800">0%</p>
+          <p class="mt-2 text-sm text-gray-600">Tax on foreign income (territorial system).</p>
+        </div>
+        <div class="rounded-2xl bg-ocean-50 p-8">
+          <p class="text-4xl font-bold text-ocean-800">100%</p>
+          <p class="mt-2 text-sm text-gray-600">Foreign ownership rights. Same as locals.</p>
+        </div>
+      </div>
+
+      <!-- Benefits grid -->
+      <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="flex gap-4">
+          <div class="shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">USD Economy</h4>
+            <p class="mt-1 text-sm text-gray-600">Panama uses the US dollar as its official currency, eliminating exchange rate risk for North American and international investors.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Territorial Tax System</h4>
+            <p class="mt-1 text-sm text-gray-600">Panama only taxes locally-sourced income. Foreign income, pensions, and overseas investments are not taxed.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">20-Year Tax Exemption</h4>
+            <p class="mt-1 text-sm text-gray-600">New construction in Panama qualifies for a property tax exemption of up to 20 years, dramatically improving your cash flow.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Pensionado Visa</h4>
+            <p class="mt-1 text-sm text-gray-600">One of the world's best retiree visa programs. Requires just $1,000/month pension income and offers extensive discounts.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Friendly Nations Visa</h4>
+            <p class="mt-1 text-sm text-gray-600">Citizens of 50+ countries can obtain residency through property investment or business ties in Panama.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" /></svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Political Stability</h4>
+            <p class="mt-1 text-sm text-gray-600">Panama is one of the most politically stable countries in Latin America, with a strong banking sector and consistent economic growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ABOUT SECTION                                -->
+  <!-- ============================================ -->
+  <section id="about" class="py-20 sm:py-28 bg-sand-50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">About Us</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          The People Behind the Project
+        </h2>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="mx-auto h-32 w-32 rounded-full bg-ocean-200 flex items-center justify-center">
+            <span class="text-3xl font-bold text-ocean-800">D</span>
+          </div>
+          <h3 class="mt-6 text-xl font-bold text-gray-900">Danny</h3>
+          <p class="text-sm text-ocean-600 font-medium">Co-Founder & Project Lead</p>
+          <p class="mt-4 text-sm text-gray-600 leading-relaxed">
+            Driven by a vision to create a community that blends modern comfort with the raw beauty of Playa Venao. Danny brings project management expertise and a deep understanding of what international buyers are looking for in a tropical property.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-32 w-32 rounded-full bg-ocean-200 flex items-center justify-center">
+            <span class="text-3xl font-bold text-ocean-800">L</span>
+          </div>
+          <h3 class="mt-6 text-xl font-bold text-gray-900">Lior Peres</h3>
+          <p class="text-sm text-ocean-600 font-medium">Co-Founder & Partner</p>
+          <p class="mt-4 text-sm text-gray-600 leading-relaxed">
+            With a background in real estate development, Lior brings hands-on experience to every aspect of the project. His focus on quality construction, smart design, and long-term value ensures Playa Venao Living stands the test of time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Architecture credit -->
+      <div class="mt-16 text-center">
+        <p class="text-sm text-gray-500">Architecture by</p>
+        <p class="text-lg font-semibold text-gray-900">AB Architecture</p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="mt-16 max-w-3xl mx-auto">
+        <h3 class="text-xl font-bold text-gray-900 text-center mb-8">Project Timeline</h3>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="flex flex-col items-center">
+              <div class="h-8 w-8 rounded-full bg-ocean-600 flex items-center justify-center">
+                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+              </div>
+              <div class="w-0.5 flex-1 bg-ocean-200"></div>
+            </div>
+            <div class="pb-6">
+              <p class="text-sm font-semibold text-ocean-700">Phase 1 - Planning & Design</p>
+              <p class="text-sm text-gray-600">Architectural plans, site surveys, and regulatory approvals.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col items-center">
+              <div class="h-8 w-8 rounded-full bg-ocean-200 flex items-center justify-center">
+                <div class="h-2 w-2 rounded-full bg-ocean-600"></div>
+              </div>
+              <div class="w-0.5 flex-1 bg-gray-200"></div>
+            </div>
+            <div class="pb-6">
+              <p class="text-sm font-semibold text-gray-900">Phase 2 - Pre-Sales & Financing</p>
+              <p class="text-sm text-gray-600">Early reservations open. Secure the best units at pre-construction pricing.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col items-center">
+              <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                <div class="h-2 w-2 rounded-full bg-gray-400"></div>
+              </div>
+              <div class="w-0.5 flex-1 bg-gray-200"></div>
+            </div>
+            <div class="pb-6">
+              <p class="text-sm font-semibold text-gray-900">Phase 3 - Construction</p>
+              <p class="text-sm text-gray-600">Ground-breaking and construction. Regular progress updates for buyers.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col items-center">
+              <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                <div class="h-2 w-2 rounded-full bg-gray-400"></div>
+              </div>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-gray-900">Phase 4 - Handover</p>
+              <p class="text-sm text-gray-600">Keys in hand. Welcome to your new life in Playa Venao.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CONTACT SECTION                              -->
+  <!-- ============================================ -->
+  <section id="contact" class="py-20 sm:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">Get in Touch</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          Ready to Learn More?
+        </h2>
+        <p class="mt-6 text-lg text-gray-600">
+          Whether you have a specific question or just want to explore the opportunity, we would love to hear from you.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+        <!-- Form -->
+        <div class="lg:col-span-3">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none" placeholder="+1 (555) 000-0000" />
+              </div>
+              <div>
+                <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+                <input type="text" id="country" name="country" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none" placeholder="Your country" />
+              </div>
+            </div>
+            <div>
+              <label for="buyer-type" class="block text-sm font-medium text-gray-700">I am a...</label>
+              <select id="buyer-type" name="buyer-type" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none">
+                <option value="">Select one</option>
+                <option value="retiree">Retiree looking for my next chapter</option>
+                <option value="investor">Investor seeking rental returns</option>
+                <option value="nomad">Digital nomad looking for a base</option>
+                <option value="vacation">Looking for a vacation home</option>
+                <option value="other">Other / Just exploring</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none" placeholder="Tell us about your interest in Playa Venao Living..."></textarea>
+            </div>
+            <div>
+              <label for="referral" class="block text-sm font-medium text-gray-700">How did you hear about us?</label>
+              <select id="referral" name="referral" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-ocean-500 focus:ring-ocean-500 focus:outline-none">
+                <option value="">Select one</option>
+                <option value="social">Social Media</option>
+                <option value="search">Google / Search Engine</option>
+                <option value="referral">Friend / Referral</option>
+                <option value="article">Article / Blog</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="w-full rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white shadow-lg hover:bg-ocean-500 transition-colors focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2">
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact info -->
+        <div class="lg:col-span-2">
+          <div class="rounded-2xl bg-sand-50 p-8 h-full">
+            <h3 class="text-lg font-bold text-gray-900">Contact Information</h3>
+            <div class="mt-6 space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 text-green-700 shrink-0">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">WhatsApp</p>
+                  <a href="https://wa.me/50760000000" target="_blank" class="text-sm text-ocean-700 hover:text-ocean-600">+507 6000-0000</a>
+                  <p class="text-xs text-gray-500 mt-1">Fastest response</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700 shrink-0">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Email</p>
+                  <a href="mailto:info@playavenaoliving.com" class="text-sm text-ocean-700 hover:text-ocean-600">info@playavenaoliving.com</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700 shrink-0">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Location</p>
+                  <p class="text-sm text-gray-600">Playa Venao, Azuero Peninsula</p>
+                  <p class="text-sm text-gray-600">Los Santos Province, Panama</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-200">
+              <p class="text-xs text-gray-500">We typically respond within 24 hours. For immediate questions, WhatsApp is the fastest way to reach us.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FAQ SECTION                                  -->
+  <!-- ============================================ -->
+  <section id="faq" class="py-20 sm:py-28 bg-sand-50">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">FAQ</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <!-- FAQ 1 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">Can foreigners own property in Panama?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">Yes. Foreigners have the same property ownership rights as Panamanian citizens. You can own titled property outright in your personal name or through a Panamanian corporation. The process is transparent, legally protected, and straightforward with the assistance of a local attorney.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">What is the Pensionado visa?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">Panama's Pensionado visa is one of the best retiree programs in the world. If you receive a pension or retirement income of $1,000/month or more, you qualify for permanent residency with extensive discounts: 25% off airline tickets, 25% off restaurant meals, 15% off hospital bills, 25% off electricity, and much more. There is no age minimum -- anyone with qualifying pension income can apply.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">What are the expected rental returns?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">We project annual rental yields of 8-12% based on comparable properties in the area, with gross rental income of $14,000-$22,000 per unit per year. Playa Venao's growing popularity as a surf and wellness destination, combined with limited quality accommodation supply, supports strong occupancy rates throughout the year. Our full investment analysis is available on the Investment page.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">How reliable is internet in Playa Venao?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">Internet connectivity has improved dramatically with the arrival of Starlink satellite internet. Many remote workers and digital nomads in the area rely on Starlink for video calls, large uploads, and consistent connectivity. The development will be equipped with modern internet infrastructure to support remote work and streaming.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">What is the construction timeline?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">We are currently in the planning and design phase. Pre-sales will open soon, followed by construction that is expected to take 12-18 months. We will keep all interested buyers and reservation holders updated with regular progress reports, photos, and milestone notifications. Subscribe to our list to stay informed.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">How do I buy from abroad?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">The entire purchase process can be handled remotely. You can sign documents via power of attorney, make international wire transfers, and work with a local attorney who represents your interests. Many of our buyers are based overseas and complete their purchase without visiting Panama until they are ready to see their new home. Of course, we also welcome you to visit and experience Playa Venao in person.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">What are the tax benefits?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">New construction in Panama qualifies for a property tax exemption of up to 20 years. Panama also operates a territorial tax system, meaning only income generated within Panama is taxed. Foreign pensions, investments, and remote work income are generally not subject to Panamanian income tax. Always consult a tax professional for advice specific to your situation.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item rounded-xl bg-white shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="text-sm font-semibold text-gray-900">Is the area safe?</span>
+            <svg class="faq-icon h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-sm text-gray-600 leading-relaxed">The Azuero Peninsula is one of the safest and most tranquil regions in Panama. Playa Venao is a small, close-knit community where neighbors know each other and look out for one another. The area has a very low crime rate compared to urban centers. Like anywhere, standard precautions are recommended, but overall the region is peaceful and welcoming to foreigners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buyer tabs script -->
+  <script>
+    // Buyer tabs
+    document.querySelectorAll('.buyer-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        // Update tabs
+        document.querySelectorAll('.buyer-tab').forEach(t => {
+          t.classList.remove('bg-ocean-700', 'text-white');
+          t.classList.add('bg-white', 'text-gray-600', 'hover:bg-gray-100');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('bg-ocean-700', 'text-white');
+        tab.classList.remove('bg-white', 'text-gray-600', 'hover:bg-gray-100');
+        tab.setAttribute('aria-selected', 'true');
+        // Update panels
+        document.querySelectorAll('.buyer-panel').forEach(p => p.classList.add('hidden'));
+        const panel = document.getElementById(`panel-${target}`);
+        if (panel) panel.classList.remove('hidden');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const item = toggle.closest('.faq-item');
+        if (!item) return;
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        if (!content || !icon) return;
+
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-45'));
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-45');
+        }
+      });
+    });
+  </script>
+
+</BaseLayout>

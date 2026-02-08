@@ -1,0 +1,555 @@
+---
+// ROI Calculator — Interactive investment return calculator
+// Pure Astro component with vanilla JavaScript
+---
+
+<section id="roi-calculator" class="py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Investment ROI Calculator</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Estimate your potential returns from a Playa Venao Living apartment investment.
+      </p>
+    </div>
+
+    <!-- Scenario Presets -->
+    <div class="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-3">
+      <span class="text-sm font-medium text-gray-500">Scenarios:</span>
+      <button
+        data-preset="conservative"
+        class="preset-btn rounded-full border border-gray-300 px-4 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"
+      >
+        Conservative
+      </button>
+      <button
+        data-preset="moderate"
+        class="preset-btn rounded-full border border-emerald-600 bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"
+      >
+        Moderate
+      </button>
+      <button
+        data-preset="optimistic"
+        class="preset-btn rounded-full border border-gray-300 px-4 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:border-emerald-500 hover:text-emerald-700"
+      >
+        Optimistic
+      </button>
+    </div>
+
+    <!-- Calculator Grid -->
+    <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2">
+
+      <!-- LEFT: Inputs -->
+      <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 sm:p-8">
+        <h3 class="text-lg font-semibold text-gray-900">Investment Parameters</h3>
+
+        <!-- Purchase Price -->
+        <div class="mt-6">
+          <div class="flex items-center justify-between">
+            <label for="roi-price" class="text-sm font-medium text-gray-700">Purchase Price</label>
+            <span id="roi-price-val" class="text-sm font-semibold text-emerald-700">$120,000</span>
+          </div>
+          <input
+            type="range"
+            id="roi-price"
+            min="80000"
+            max="200000"
+            step="5000"
+            value="120000"
+            class="roi-slider mt-2 w-full"
+          />
+          <div class="mt-1 flex justify-between text-xs text-gray-400">
+            <span>$80,000</span>
+            <span>$200,000</span>
+          </div>
+        </div>
+
+        <!-- Down Payment -->
+        <div class="mt-6">
+          <div class="flex items-center justify-between">
+            <label for="roi-down" class="text-sm font-medium text-gray-700">Down Payment</label>
+            <span id="roi-down-val" class="text-sm font-semibold text-emerald-700">100%</span>
+          </div>
+          <input
+            type="range"
+            id="roi-down"
+            min="20"
+            max="100"
+            step="5"
+            value="100"
+            class="roi-slider mt-2 w-full"
+          />
+          <div class="mt-1 flex justify-between text-xs text-gray-400">
+            <span>20%</span>
+            <span>100% (Cash)</span>
+          </div>
+        </div>
+
+        <!-- Nightly Rate -->
+        <div class="mt-6">
+          <div class="flex items-center justify-between">
+            <label for="roi-nightly" class="text-sm font-medium text-gray-700">Nightly Rate</label>
+            <span id="roi-nightly-val" class="text-sm font-semibold text-emerald-700">$85</span>
+          </div>
+          <input
+            type="range"
+            id="roi-nightly"
+            min="50"
+            max="150"
+            step="5"
+            value="85"
+            class="roi-slider mt-2 w-full"
+          />
+          <div class="mt-1 flex justify-between text-xs text-gray-400">
+            <span>$50</span>
+            <span>$150</span>
+          </div>
+        </div>
+
+        <!-- Occupancy Rate -->
+        <div class="mt-6">
+          <div class="flex items-center justify-between">
+            <label for="roi-occupancy" class="text-sm font-medium text-gray-700">Occupancy Rate</label>
+            <span id="roi-occupancy-val" class="text-sm font-semibold text-emerald-700">60.0%</span>
+          </div>
+          <input
+            type="range"
+            id="roi-occupancy"
+            min="30"
+            max="90"
+            step="1"
+            value="60"
+            class="roi-slider mt-2 w-full"
+          />
+          <div class="mt-1 flex justify-between text-xs text-gray-400">
+            <span>30%</span>
+            <span>90%</span>
+          </div>
+        </div>
+
+        <!-- Management Fee -->
+        <div class="mt-6">
+          <div class="flex items-center justify-between">
+            <label for="roi-mgmt" class="text-sm font-medium text-gray-700">Property Management Fee</label>
+            <span id="roi-mgmt-val" class="text-sm font-semibold text-emerald-700">20.0%</span>
+          </div>
+          <input
+            type="range"
+            id="roi-mgmt"
+            min="0"
+            max="30"
+            step="1"
+            value="20"
+            class="roi-slider mt-2 w-full"
+          />
+          <div class="mt-1 flex justify-between text-xs text-gray-400">
+            <span>0%</span>
+            <span>30%</span>
+          </div>
+        </div>
+
+        <!-- Annual Appreciation -->
+        <div class="mt-6">
+          <div class="flex items-center justify-between">
+            <label for="roi-appreciation" class="text-sm font-medium text-gray-700">Annual Appreciation</label>
+            <span id="roi-appreciation-val" class="text-sm font-semibold text-emerald-700">7.0%</span>
+          </div>
+          <input
+            type="range"
+            id="roi-appreciation"
+            min="0"
+            max="15"
+            step="0.5"
+            value="7"
+            class="roi-slider mt-2 w-full"
+          />
+          <div class="mt-1 flex justify-between text-xs text-gray-400">
+            <span>0%</span>
+            <span>15%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Results -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Annual Summary Cards -->
+        <div class="rounded-2xl bg-emerald-900 p-6 text-white shadow-sm sm:p-8">
+          <h3 class="text-lg font-semibold text-emerald-100">Annual Summary</h3>
+          <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="rounded-xl bg-emerald-800/60 p-4">
+              <p class="text-xs font-medium uppercase tracking-wider text-emerald-300">Gross Rental Income</p>
+              <p id="roi-out-gross" class="roi-output mt-1 text-2xl font-bold">$18,615</p>
+            </div>
+            <div class="rounded-xl bg-emerald-800/60 p-4">
+              <p class="text-xs font-medium uppercase tracking-wider text-emerald-300">Annual Expenses</p>
+              <p id="roi-out-expenses" class="roi-output mt-1 text-2xl font-bold">$5,923</p>
+            </div>
+            <div class="rounded-xl bg-emerald-800/60 p-4">
+              <p class="text-xs font-medium uppercase tracking-wider text-emerald-300">Net Rental Income</p>
+              <p id="roi-out-net" class="roi-output mt-1 text-2xl font-bold text-emerald-300">$12,692</p>
+            </div>
+            <div class="rounded-xl bg-emerald-800/60 p-4">
+              <p class="text-xs font-medium uppercase tracking-wider text-emerald-300">Cash-on-Cash Return</p>
+              <p id="roi-out-coc" class="roi-output mt-1 text-2xl font-bold text-emerald-300">10.6%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projection Table -->
+        <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 sm:p-8">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold text-gray-900">Return Projections</h3>
+            <div class="flex gap-1 rounded-lg bg-gray-100 p-0.5">
+              <button
+                id="roi-tab-5"
+                class="roi-tab rounded-md px-3 py-1 text-xs font-medium text-white bg-emerald-700 transition-colors"
+                data-years="5"
+              >
+                5-Year
+              </button>
+              <button
+                id="roi-tab-10"
+                class="roi-tab rounded-md px-3 py-1 text-xs font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                data-years="10"
+              >
+                10-Year
+              </button>
+            </div>
+          </div>
+
+          <!-- Projection Table -->
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-gray-200 text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th class="py-3 pr-4">Year</th>
+                  <th class="py-3 pr-4">Property Value</th>
+                  <th class="py-3 pr-4">Cumulative Income</th>
+                  <th class="py-3">Total Return</th>
+                </tr>
+              </thead>
+              <tbody id="roi-projection-body">
+                <!-- Filled by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Summary Row -->
+          <div class="mt-6 flex flex-col gap-3 rounded-xl bg-emerald-50 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs font-medium uppercase tracking-wider text-emerald-700">Total ROI</p>
+              <p id="roi-out-total-roi" class="roi-output mt-0.5 text-2xl font-bold text-emerald-800">78.5%</p>
+            </div>
+            <div>
+              <p class="text-xs font-medium uppercase tracking-wider text-emerald-700">Total Profit</p>
+              <p id="roi-out-total-profit" class="roi-output mt-0.5 text-2xl font-bold text-emerald-800">$94,153</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Report Button -->
+        <button
+          id="roi-download-btn"
+          class="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-3 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-100"
+        >
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          Download Report (PDF)
+        </button>
+
+        <!-- Disclaimer -->
+        <p class="text-center text-xs leading-relaxed text-gray-400">
+          These projections are estimates for illustrative purposes only. Actual returns may vary.
+          Calculations assume consistent occupancy, stable nightly rates, and do not account for
+          taxes, financing costs, or currency fluctuations.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom slider styling */
+  .roi-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  /* Track — uses a gradient fill via JS to show progress */
+  .roi-slider::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 9999px;
+  }
+
+  .roi-slider::-moz-range-track {
+    height: 6px;
+    border-radius: 9999px;
+    background: #e5e7eb;
+  }
+
+  /* Thumb */
+  .roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #047857;
+    border: 3px solid #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: -7px;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .roi-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #047857;
+    border: 3px solid #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .roi-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.15);
+  }
+
+  .roi-slider::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.15);
+  }
+
+  .roi-slider:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.2);
+  }
+
+  .roi-slider:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.2);
+  }
+
+  /* Output number transitions */
+  .roi-output {
+    transition: opacity 0.15s ease;
+  }
+
+  /* Projection table row transitions */
+  #roi-projection-body tr {
+    transition: background-color 0.15s ease;
+  }
+
+  #roi-projection-body tr:hover {
+    background-color: #f0fdf4;
+  }
+</style>
+
+<script>
+  // ---- Constants ----
+  const MAINTENANCE_YEARLY = 1200;
+  const UTILITIES_YEARLY = 600;
+  const INSURANCE_YEARLY = 400;
+  const FIXED_EXPENSES = MAINTENANCE_YEARLY + UTILITIES_YEARLY + INSURANCE_YEARLY;
+
+  // ---- Presets ----
+  const PRESETS: Record<string, { price: number; nightly: number; occupancy: number; mgmt: number; appreciation: number }> = {
+    conservative: { price: 120000, nightly: 70, occupancy: 50, mgmt: 25, appreciation: 5 },
+    moderate:     { price: 120000, nightly: 85, occupancy: 60, mgmt: 20, appreciation: 7 },
+    optimistic:   { price: 120000, nightly: 100, occupancy: 70, mgmt: 15, appreciation: 10 },
+  };
+
+  // ---- DOM references ----
+  const els = {
+    price:        document.getElementById('roi-price') as HTMLInputElement,
+    down:         document.getElementById('roi-down') as HTMLInputElement,
+    nightly:      document.getElementById('roi-nightly') as HTMLInputElement,
+    occupancy:    document.getElementById('roi-occupancy') as HTMLInputElement,
+    mgmt:         document.getElementById('roi-mgmt') as HTMLInputElement,
+    appreciation: document.getElementById('roi-appreciation') as HTMLInputElement,
+
+    priceVal:        document.getElementById('roi-price-val')!,
+    downVal:         document.getElementById('roi-down-val')!,
+    nightlyVal:      document.getElementById('roi-nightly-val')!,
+    occupancyVal:    document.getElementById('roi-occupancy-val')!,
+    mgmtVal:         document.getElementById('roi-mgmt-val')!,
+    appreciationVal: document.getElementById('roi-appreciation-val')!,
+
+    outGross:   document.getElementById('roi-out-gross')!,
+    outExpenses: document.getElementById('roi-out-expenses')!,
+    outNet:     document.getElementById('roi-out-net')!,
+    outCoc:     document.getElementById('roi-out-coc')!,
+    outTotalRoi:   document.getElementById('roi-out-total-roi')!,
+    outTotalProfit: document.getElementById('roi-out-total-profit')!,
+
+    projectionBody: document.getElementById('roi-projection-body')!,
+
+    tab5:  document.getElementById('roi-tab-5')!,
+    tab10: document.getElementById('roi-tab-10')!,
+
+    downloadBtn: document.getElementById('roi-download-btn')!,
+  };
+
+  let currentYears = 5;
+
+  // ---- Formatting helpers ----
+  function fmtCurrency(n: number): string {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function fmtPct(n: number): string {
+    return n.toFixed(1) + '%';
+  }
+
+  // ---- Slider gradient fill ----
+  function updateSliderFill(slider: HTMLInputElement): void {
+    const min = parseFloat(slider.min);
+    const max = parseFloat(slider.max);
+    const val = parseFloat(slider.value);
+    const pct = ((val - min) / (max - min)) * 100;
+    slider.style.background = `linear-gradient(to right, #047857 ${pct}%, #e5e7eb ${pct}%)`;
+  }
+
+  // ---- Core calculation ----
+  function calculate(): void {
+    const price = parseFloat(els.price.value);
+    const downPct = parseFloat(els.down.value) / 100;
+    const nightly = parseFloat(els.nightly.value);
+    const occupancy = parseFloat(els.occupancy.value) / 100;
+    const mgmtPct = parseFloat(els.mgmt.value) / 100;
+    const appreciationRate = parseFloat(els.appreciation.value) / 100;
+
+    const cashInvested = price * downPct;
+
+    // Annual figures
+    const grossRental = nightly * 365 * occupancy;
+    const managementFee = grossRental * mgmtPct;
+    const totalExpenses = managementFee + FIXED_EXPENSES;
+    const netRental = grossRental - totalExpenses;
+    const cocReturn = cashInvested > 0 ? (netRental / cashInvested) * 100 : 0;
+
+    // Update input displays
+    els.priceVal.textContent = fmtCurrency(price);
+    els.downVal.textContent = fmtPct(parseFloat(els.down.value));
+    els.nightlyVal.textContent = fmtCurrency(nightly);
+    els.occupancyVal.textContent = fmtPct(parseFloat(els.occupancy.value));
+    els.mgmtVal.textContent = fmtPct(parseFloat(els.mgmt.value));
+    els.appreciationVal.textContent = fmtPct(parseFloat(els.appreciation.value));
+
+    // Update output cards
+    els.outGross.textContent = fmtCurrency(grossRental);
+    els.outExpenses.textContent = fmtCurrency(totalExpenses);
+    els.outNet.textContent = fmtCurrency(netRental);
+    els.outCoc.textContent = fmtPct(cocReturn);
+
+    // Build projection table
+    let html = '';
+    let cumulativeIncome = 0;
+    let propertyValue = price;
+
+    for (let yr = 1; yr <= currentYears; yr++) {
+      propertyValue = propertyValue * (1 + appreciationRate);
+      cumulativeIncome += netRental;
+      const appreciationGain = propertyValue - price;
+      const totalReturn = cumulativeIncome + appreciationGain;
+
+      const isLast = yr === currentYears;
+      const rowClass = isLast ? 'font-semibold text-emerald-800' : 'text-gray-700';
+
+      html += `
+        <tr class="border-b border-gray-100 ${rowClass}">
+          <td class="py-2.5 pr-4">${yr}</td>
+          <td class="py-2.5 pr-4">${fmtCurrency(propertyValue)}</td>
+          <td class="py-2.5 pr-4">${fmtCurrency(cumulativeIncome)}</td>
+          <td class="py-2.5">${fmtCurrency(totalReturn)}</td>
+        </tr>`;
+    }
+
+    els.projectionBody.innerHTML = html;
+
+    // Final totals
+    const finalAppreciation = propertyValue - price;
+    const totalProfit = cumulativeIncome + finalAppreciation;
+    const totalRoi = cashInvested > 0 ? (totalProfit / cashInvested) * 100 : 0;
+
+    els.outTotalRoi.textContent = fmtPct(totalRoi);
+    els.outTotalProfit.textContent = fmtCurrency(totalProfit);
+
+    // Update all slider fills
+    updateSliderFill(els.price);
+    updateSliderFill(els.down);
+    updateSliderFill(els.nightly);
+    updateSliderFill(els.occupancy);
+    updateSliderFill(els.mgmt);
+    updateSliderFill(els.appreciation);
+  }
+
+  // ---- Event listeners for sliders ----
+  const sliders = [els.price, els.down, els.nightly, els.occupancy, els.mgmt, els.appreciation];
+  sliders.forEach((slider) => {
+    slider.addEventListener('input', calculate);
+  });
+
+  // ---- Preset buttons ----
+  const presetBtns = document.querySelectorAll<HTMLButtonElement>('.preset-btn');
+
+  function setActivePreset(activeBtn: HTMLButtonElement): void {
+    presetBtns.forEach((btn) => {
+      btn.classList.remove('border-emerald-600', 'bg-emerald-50', 'text-emerald-700');
+      btn.classList.add('border-gray-300', 'text-gray-700');
+    });
+    activeBtn.classList.remove('border-gray-300', 'text-gray-700');
+    activeBtn.classList.add('border-emerald-600', 'bg-emerald-50', 'text-emerald-700');
+  }
+
+  presetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.preset as string;
+      const preset = PRESETS[key];
+      if (!preset) return;
+
+      els.price.value = String(preset.price);
+      els.nightly.value = String(preset.nightly);
+      els.occupancy.value = String(preset.occupancy);
+      els.mgmt.value = String(preset.mgmt);
+      els.appreciation.value = String(preset.appreciation);
+
+      setActivePreset(btn);
+      calculate();
+    });
+  });
+
+  // ---- Projection tab toggle ----
+  function setTab(years: number): void {
+    currentYears = years;
+    if (years === 5) {
+      els.tab5.classList.add('bg-emerald-700', 'text-white');
+      els.tab5.classList.remove('text-gray-600');
+      els.tab10.classList.remove('bg-emerald-700', 'text-white');
+      els.tab10.classList.add('text-gray-600');
+    } else {
+      els.tab10.classList.add('bg-emerald-700', 'text-white');
+      els.tab10.classList.remove('text-gray-600');
+      els.tab5.classList.remove('bg-emerald-700', 'text-white');
+      els.tab5.classList.add('text-gray-600');
+    }
+    calculate();
+  }
+
+  els.tab5.addEventListener('click', () => setTab(5));
+  els.tab10.addEventListener('click', () => setTab(10));
+
+  // ---- Download placeholder ----
+  els.downloadBtn.addEventListener('click', () => {
+    alert('PDF report download will be available soon. Contact us for a personalized investment analysis.');
+  });
+
+  // ---- Initial calculation ----
+  calculate();
+</script>
