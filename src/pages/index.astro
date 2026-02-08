@@ -497,25 +497,27 @@ const base = import.meta.env.BASE_URL;
 
       <!-- Interactive Map -->
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-      <style>
-        .map-icon { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.5); border: 2.5px solid #fff; }
-        .map-icon-home { background: #E07C3E; width: 44px; height: 44px; font-size: 22px; border-width: 3px; animation: pulse-home 2s ease-in-out infinite; }
+      <style is:global>
+        .map-icon { display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; color: #fff !important; font-size: 15px !important; box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important; border: 2.5px solid #fff !important; position: relative !important; z-index: 500 !important; }
+        .map-icon-home { background: #E07C3E !important; width: 44px !important; height: 44px !important; font-size: 22px !important; border-width: 3px !important; animation: pulse-home 2s ease-in-out infinite !important; }
         @keyframes pulse-home { 0%,100% { box-shadow: 0 0 0 0 rgba(224,124,62,0.5); } 50% { box-shadow: 0 0 0 12px rgba(224,124,62,0); } }
-        .map-icon-surf { background: #0EA5E9; width: 34px; height: 34px; }
-        .map-icon-food { background: #F59E0B; width: 34px; height: 34px; }
-        .map-icon-nature { background: #10B981; width: 34px; height: 34px; }
-        .map-icon-stay { background: #EC4899; width: 34px; height: 34px; }
-        .map-icon-town { background: #8B5CF6; width: 34px; height: 34px; }
-        .map-icon-beach { background: #F97316; width: 34px; height: 34px; }
-        .map-popup h3 { font-weight: 700; font-size: 14px; margin: 0 0 3px; color: #1a1a1a; }
-        .map-popup p { font-size: 12px; margin: 0; color: #555; line-height: 1.4; }
-        .map-popup .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 9999px; margin-top: 5px; }
-        .tag-surf { background: #E0F2FE; color: #0369A1; }
-        .tag-food { background: #FEF3C7; color: #92400E; }
-        .tag-nature { background: #D1FAE5; color: #065F46; }
-        .tag-stay { background: #FCE7F3; color: #9D174D; }
-        .tag-town { background: #EDE9FE; color: #5B21B6; }
-        .tag-beach { background: #FFEDD5; color: #9A3412; }
+        .map-icon-surf { background: #0EA5E9 !important; width: 34px !important; height: 34px !important; }
+        .map-icon-food { background: #F59E0B !important; width: 34px !important; height: 34px !important; }
+        .map-icon-nature { background: #10B981 !important; width: 34px !important; height: 34px !important; }
+        .map-icon-stay { background: #EC4899 !important; width: 34px !important; height: 34px !important; }
+        .map-icon-town { background: #8B5CF6 !important; width: 34px !important; height: 34px !important; }
+        .map-icon-beach { background: #F97316 !important; width: 34px !important; height: 34px !important; }
+        .leaflet-marker-icon { overflow: visible !important; background: none !important; border: none !important; }
+        .leaflet-div-icon-custom { background: none !important; border: none !important; overflow: visible !important; }
+        .map-popup h3 { font-weight: 700 !important; font-size: 14px !important; margin: 0 0 3px !important; color: #1a1a1a !important; }
+        .map-popup p { font-size: 12px !important; margin: 0 !important; color: #555 !important; line-height: 1.4 !important; }
+        .map-popup .tag { display: inline-block !important; font-size: 10px !important; font-weight: 600 !important; padding: 2px 8px !important; border-radius: 9999px !important; margin-top: 5px !important; }
+        .tag-surf { background: #E0F2FE !important; color: #0369A1 !important; }
+        .tag-food { background: #FEF3C7 !important; color: #92400E !important; }
+        .tag-nature { background: #D1FAE5 !important; color: #065F46 !important; }
+        .tag-stay { background: #FCE7F3 !important; color: #9D174D !important; }
+        .tag-town { background: #EDE9FE !important; color: #5B21B6 !important; }
+        .tag-beach { background: #FFEDD5 !important; color: #9A3412 !important; }
         .leaflet-popup-content-wrapper { border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; }
         .leaflet-popup-content { margin: 10px 14px !important; }
         .leaflet-popup-tip { box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important; }
@@ -527,7 +529,7 @@ const base = import.meta.env.BASE_URL;
       <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
       <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.428, -80.170], 15);
+          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.427, -80.165], 14);
 
           L.control.zoom({ position: 'topright' }).addTo(map);
 
@@ -543,41 +545,47 @@ const base = import.meta.env.BASE_URL;
           }).addTo(map);
 
           function icon(cls, emoji) {
-            return L.divIcon({ className: '', html: '<div class="map-icon ' + cls + '">' + emoji + '</div>', iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -19] });
+            return L.divIcon({ className: 'leaflet-div-icon-custom', html: '<div class="map-icon ' + cls + '">' + emoji + '</div>', iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -19] });
           }
-          var homeIcon = L.divIcon({ className: '', html: '<div class="map-icon map-icon-home">🏠</div>', iconSize: [44, 44], iconAnchor: [22, 22], popupAnchor: [0, -24] });
+          var homeIcon = L.divIcon({ className: 'leaflet-div-icon-custom', html: '<div class="map-icon map-icon-home">🏠</div>', iconSize: [44, 44], iconAnchor: [22, 22], popupAnchor: [0, -24] });
 
           var places = [
             /* === YOUR DEVELOPMENT === */
             { lat: 7.436109, lng: -80.190583, icon: homeIcon, popup: '<div class="map-popup"><h3>🏡 Playa Venao Living</h3><p>Modern beachfront apartments<br>Your future home in paradise</p></div>', open: true },
 
             /* === SURF === */
-            { lat: 7.4220, lng: -80.1615, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf — beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
-            { lat: 7.4380, lng: -80.1660, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Mirador | Eco Venao</h3><p>Surf school, lessons & board rentals</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4265, lng: -80.1575, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf — beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4355, lng: -80.1680, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Eco Venao Surf School</h3><p>Surf lessons & board rentals</p><span class="tag tag-surf">Surf</span></div>' },
 
             /* === FOOD & DRINK === */
-            { lat: 7.4340, lng: -80.1575, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>Wao Jungle, Playa Venao</h3><p>Restaurant & bar in jungle setting</p><span class="tag tag-food">Dining</span></div>' },
-            { lat: 7.4320, lng: -80.1880, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Casa de la Salida del Sol</h3><p>Beachfront café with breakfast & smoothies</p><span class="tag tag-food">Café</span></div>' },
+            { lat: 7.4310, lng: -80.1610, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>Wao Jungle</h3><p>Restaurant & bar in jungle setting</p><span class="tag tag-food">Dining</span></div>' },
+            { lat: 7.4330, lng: -80.1850, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Casa de la Salida del Sol</h3><p>Beachfront café with breakfast & smoothies</p><span class="tag tag-food">Café</span></div>' },
 
             /* === STAYS === */
-            { lat: 7.4350, lng: -80.1530, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Playa Venao Hotel Resort</h3><p>Beachfront resort & restaurant</p><span class="tag tag-stay">Hotel</span></div>' },
-            { lat: 7.4310, lng: -80.1510, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Playa Venao</h3><p>Co-working, social hub & hostel</p><span class="tag tag-stay">Hostel</span></div>' },
-            { lat: 7.4260, lng: -80.1470, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Villa Marina Hotel</h3><p>Boutique hotel on the bay</p><span class="tag tag-stay">Hotel</span></div>' },
-            { lat: 7.4230, lng: -80.1440, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Azuero Lodge</h3><p>Eco-lodge, pool & tropical gardens</p><span class="tag tag-stay">Lodge</span></div>' },
+            { lat: 7.4295, lng: -80.1535, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Playa Venao Hotel Resort</h3><p>Beachfront resort & restaurant</p><span class="tag tag-stay">Hotel</span></div>' },
+            { lat: 7.4240, lng: -80.1510, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Playa Venao</h3><p>Co-working, social hub & hostel</p><span class="tag tag-stay">Hostel</span></div>' },
+            { lat: 7.4215, lng: -80.1480, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Villa Marina Hotel</h3><p>Boutique hotel on the bay</p><span class="tag tag-stay">Hotel</span></div>' },
+            { lat: 7.4190, lng: -80.1455, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Azuero Lodge</h3><p>Eco-lodge, pool & tropical gardens</p><span class="tag tag-stay">Lodge</span></div>' },
 
             /* === NATURE === */
-            { lat: 7.4330, lng: -80.1640, icon: icon('map-icon-nature','🌿'), popup: '<div class="map-popup"><h3>Las Escobas del Venado</h3><p>Jungle trails & waterfall hike</p><span class="tag tag-nature">Nature</span></div>' },
-            { lat: 7.4370, lng: -80.1850, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' },
+            { lat: 7.4370, lng: -80.1720, icon: icon('map-icon-nature','🌿'), popup: '<div class="map-popup"><h3>Las Escobas del Venado</h3><p>Jungle trails & waterfall hike</p><span class="tag tag-nature">Nature</span></div>' },
+            { lat: 7.4380, lng: -80.1830, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' },
 
             /* === NEARBY BEACHES === */
-            { lat: 7.4170, lng: -80.1950, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Playa Madroñito</h3><p>Secluded beach — quiet & pristine</p><span class="tag tag-beach">Beach</span></div>' },
-            { lat: 7.4130, lng: -80.1350, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Bahía de Achotines</h3><p>Sheltered bay south of Venao</p><span class="tag tag-beach">Beach</span></div>' }
+            { lat: 7.4320, lng: -80.1920, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Playa Madroñito</h3><p>Secluded beach — quiet & pristine</p><span class="tag tag-beach">Beach</span></div>' },
+            { lat: 7.4160, lng: -80.1400, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Bahía de Achotines</h3><p>Sheltered bay south of Venao</p><span class="tag tag-beach">Beach</span></div>' }
           ];
 
+          /* Add all markers */
+          var bounds = L.latLngBounds();
           places.forEach(function(p) {
             var m = L.marker([p.lat, p.lng], { icon: p.icon }).addTo(map).bindPopup(p.popup);
             if (p.open) m.openPopup();
+            bounds.extend([p.lat, p.lng]);
           });
+
+          /* Fit map to show all markers with padding */
+          map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
         });
       </script>
 
