@@ -497,20 +497,64 @@ const base = import.meta.env.BASE_URL;
 
       <!-- Interactive Map -->
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+      <style>
+        .map-icon { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); border: 2px solid rgba(255,255,255,0.8); }
+        .map-icon-home { background: #E07C3E; width: 40px; height: 40px; font-size: 20px; border-width: 3px; }
+        .map-icon-surf { background: #1A6B8A; width: 32px; height: 32px; }
+        .map-icon-food { background: #D97706; width: 32px; height: 32px; }
+        .map-icon-nature { background: #2D6A4F; width: 32px; height: 32px; }
+        .map-icon-stay { background: #7C3AED; width: 32px; height: 32px; }
+        .map-icon-town { background: #6B7280; width: 32px; height: 32px; }
+        .map-popup h3 { font-weight: 700; font-size: 14px; margin: 0 0 2px; color: #1a1a1a; }
+        .map-popup p { font-size: 12px; margin: 0; color: #555; line-height: 1.4; }
+        .map-popup .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 9999px; margin-top: 4px; }
+        .tag-surf { background: #E0F2FE; color: #0369A1; }
+        .tag-food { background: #FEF3C7; color: #92400E; }
+        .tag-nature { background: #D1FAE5; color: #065F46; }
+        .tag-stay { background: #EDE9FE; color: #5B21B6; }
+        .tag-town { background: #F3F4F6; color: #374151; }
+        .leaflet-popup-content-wrapper { border-radius: 12px !important; }
+        .leaflet-popup-content { margin: 10px 14px !important; }
+      </style>
       <div class="mt-12 rounded-2xl overflow-hidden shadow-lg">
-        <div id="map" class="h-80 sm:h-96"></div>
+        <div id="map" class="h-[28rem] sm:h-[32rem]"></div>
       </div>
       <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
       <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-          var map = L.map('map', { scrollWheelZoom: false }).setView([7.436109, -80.190583], 14);
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.430, -80.175], 13);
+
+          L.control.zoom({ position: 'topright' }).addTo(map);
+
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: 'abcd',
             maxZoom: 19
           }).addTo(map);
-          L.marker([7.436109, -80.190583]).addTo(map)
-            .bindPopup('<strong>Playa Venao Living</strong><br>Beachfront apartments')
-            .openPopup();
+
+          function icon(cls, emoji) {
+            return L.divIcon({ className: '', html: '<div class="map-icon ' + cls + '">' + emoji + '</div>', iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -18] });
+          }
+          var homeIcon = L.divIcon({ className: '', html: '<div class="map-icon map-icon-home">🏠</div>', iconSize: [40, 40], iconAnchor: [20, 20], popupAnchor: [0, -22] });
+
+          var places = [
+            { lat: 7.436109, lng: -80.190583, icon: homeIcon, popup: '<div class="map-popup"><h3>🏡 Playa Venao Living</h3><p>Modern beachfront apartments<br>Your future home in paradise</p></div>', open: true },
+            { lat: 7.4285, lng: -80.1690, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf, beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4320, lng: -80.1780, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Eco Venao Surf School</h3><p>Lessons, board rentals & camps</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4340, lng: -80.1720, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>La Choza Restaurant</h3><p>Fresh seafood & local Panamanian cuisine</p><span class="tag tag-food">Dining</span></div>' },
+            { lat: 7.4295, lng: -80.1635, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Venao Beach Café</h3><p>Coffee, smoothies & healthy bowls</p><span class="tag tag-food">Café</span></div>' },
+            { lat: 7.4310, lng: -80.1670, icon: icon('map-icon-nature','🧘'), popup: '<div class="map-popup"><h3>Yoga & Wellness Retreat</h3><p>Daily classes with ocean views</p><span class="tag tag-nature">Wellness</span></div>' },
+            { lat: 7.4400, lng: -80.1550, icon: icon('map-icon-nature','🌊'), popup: '<div class="map-popup"><h3>Las Escobas Waterfall</h3><p>Jungle hike to a hidden waterfall</p><span class="tag tag-nature">Nature</span></div>' },
+            { lat: 7.4260, lng: -80.1750, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Hostel Playa Venao</h3><p>Co-working, social hub & accommodation</p><span class="tag tag-stay">Stay</span></div>' },
+            { lat: 7.4330, lng: -80.1640, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Eco Venao Lodge</h3><p>Eco-lodge, pool & jungle setting</p><span class="tag tag-stay">Stay</span></div>' },
+            { lat: 7.5267, lng: -80.1707, icon: icon('map-icon-town','🏘️'), popup: '<div class="map-popup"><h3>Pedasí</h3><p>Charming town — shops, restaurants & services</p><span class="tag tag-town">Town — 30 min</span></div>' },
+            { lat: 7.4370, lng: -80.1850, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' }
+          ];
+
+          places.forEach(function(p) {
+            var m = L.marker([p.lat, p.lng], { icon: p.icon }).addTo(map).bindPopup(p.popup);
+            if (p.open) m.openPopup();
+          });
         });
       </script>
 
