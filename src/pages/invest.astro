@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Investment Opportunity — Playa Venao Living" description="Discover the investment case for beachfront apartments in Playa Venao, Panama. 8-12% rental yields, 20-year tax exemption, and USD economy.">
@@ -7,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Hero -->
   <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/land/04-aerial-land-angled.jpeg" alt="Aerial view of development land" class="h-full w-full object-cover" />
+      <img src={`${base}images/land/04-aerial-land-angled.jpeg`} alt="Aerial view of development land" class="h-full w-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
     <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8 py-32">
@@ -320,7 +321,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
         <div>
-          <img src="/images/land/01-our-land-topdown.jpeg" alt="Top-down aerial view of the development land" class="rounded-2xl shadow-lg" />
+          <img src={`${base}images/land/01-our-land-topdown.jpeg`} alt="Top-down aerial view of the development land" class="rounded-2xl shadow-lg" />
         </div>
       </div>
     </div>
@@ -337,7 +338,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="#" class="w-full sm:w-auto rounded-lg bg-white px-8 py-4 text-sm font-semibold text-ocean-800 hover:bg-ocean-50 transition-colors">
           Download Investor Prospectus
         </a>
-        <a href="/#contact" class="w-full sm:w-auto rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+        <a href={`${base}#contact`} class="w-full sm:w-auto rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
           Contact Us
         </a>
       </div>

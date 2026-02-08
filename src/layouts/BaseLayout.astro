@@ -7,22 +7,24 @@ interface Props {
   ogImage?: string;
 }
 
+const base = import.meta.env.BASE_URL;
+
 const {
   title,
   description = 'Modern beachfront apartments in Playa Venao, Panama. Surf, invest, and live in paradise on the Pacific coast.',
-  ogImage = '/images/land/03-aerial-wide-coastline.jpeg'
+  ogImage = `${base}images/land/03-aerial-wide-coastline.jpeg`
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Residences', href: '/#residences' },
-  { label: 'Lifestyle', href: '/lifestyle' },
-  { label: 'Investment', href: '/invest' },
-  { label: 'Location', href: '/#location' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Home', href: base },
+  { label: 'Residences', href: `${base}#residences` },
+  { label: 'Lifestyle', href: `${base}lifestyle` },
+  { label: 'Investment', href: `${base}invest` },
+  { label: 'Location', href: `${base}#location` },
+  { label: 'Gallery', href: `${base}gallery` },
+  { label: 'Contact', href: `${base}#contact` },
 ];
 ---
 
@@ -30,7 +32,7 @@ const navItems = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
@@ -61,7 +63,7 @@ const navItems = [
     <header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <!-- Logo -->
-        <a href="/" class="relative z-10 flex items-center gap-2">
+        <a href={base} class="relative z-10 flex items-center gap-2">
           <span id="nav-logo" class="text-xl font-bold tracking-tight text-white transition-colors duration-300">
             Playa Venao Living
           </span>
@@ -153,11 +155,11 @@ const navItems = [
           <div>
             <h4 class="text-sm font-semibold uppercase tracking-wider text-white/40">Quick Links</h4>
             <ul class="mt-4 space-y-3">
-              <li><a href="/#residences" class="text-sm text-white/60 hover:text-white transition-colors">Residences</a></li>
-              <li><a href="/lifestyle" class="text-sm text-white/60 hover:text-white transition-colors">Lifestyle</a></li>
-              <li><a href="/invest" class="text-sm text-white/60 hover:text-white transition-colors">Investment</a></li>
-              <li><a href="/gallery" class="text-sm text-white/60 hover:text-white transition-colors">Gallery</a></li>
-              <li><a href="/#faq" class="text-sm text-white/60 hover:text-white transition-colors">FAQ</a></li>
+              <li><a href={`${base}#residences`} class="text-sm text-white/60 hover:text-white transition-colors">Residences</a></li>
+              <li><a href={`${base}lifestyle`} class="text-sm text-white/60 hover:text-white transition-colors">Lifestyle</a></li>
+              <li><a href={`${base}invest`} class="text-sm text-white/60 hover:text-white transition-colors">Investment</a></li>
+              <li><a href={`${base}gallery`} class="text-sm text-white/60 hover:text-white transition-colors">Gallery</a></li>
+              <li><a href={`${base}#faq`} class="text-sm text-white/60 hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
 
@@ -184,10 +186,10 @@ const navItems = [
           <div>
             <h4 class="text-sm font-semibold uppercase tracking-wider text-white/40">Information</h4>
             <ul class="mt-4 space-y-3">
-              <li><a href="/#about" class="text-sm text-white/60 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/#panama-benefits" class="text-sm text-white/60 hover:text-white transition-colors">Why Panama</a></li>
-              <li><a href="/#faq" class="text-sm text-white/60 hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="/#contact" class="text-sm text-white/60 hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href={`${base}#about`} class="text-sm text-white/60 hover:text-white transition-colors">About Us</a></li>
+              <li><a href={`${base}#panama-benefits`} class="text-sm text-white/60 hover:text-white transition-colors">Why Panama</a></li>
+              <li><a href={`${base}#faq`} class="text-sm text-white/60 hover:text-white transition-colors">FAQ</a></li>
+              <li><a href={`${base}#contact`} class="text-sm text-white/60 hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
         </div>

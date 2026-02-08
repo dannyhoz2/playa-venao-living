@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="The Lifestyle — Playa Venao Living" description="Discover life in Playa Venao: world-class surfing, yoga retreats, jungle waterfalls, and a vibrant international community on Panama's Pacific coast.">
@@ -7,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Hero -->
   <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/lifestyle/01-surfers-walking-to-ocean.jpeg" alt="Surfers walking to the ocean at Playa Venao" class="h-full w-full object-cover" />
+      <img src={`${base}images/lifestyle/01-surfers-walking-to-ocean.jpeg`} alt="Surfers walking to the ocean at Playa Venao" class="h-full w-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
     </div>
     <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8 py-32">
@@ -56,9 +57,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <img src="/images/lifestyle/04-surfer-action-wave.jpeg" alt="Surfer riding a wave at Playa Venao" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/02-surfer-panama-flag-board.jpeg" alt="Surfer with Panama flag surfboard" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/06-surfer-girls-walking.jpeg" alt="Surfer girls walking on the beach" class="rounded-xl object-cover h-64 w-full col-span-2" />
+          <img src={`${base}images/lifestyle/04-surfer-action-wave.jpeg`} alt="Surfer riding a wave at Playa Venao" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/02-surfer-panama-flag-board.jpeg`} alt="Surfer with Panama flag surfboard" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/06-surfer-girls-walking.jpeg`} alt="Surfer girls walking on the beach" class="rounded-xl object-cover h-64 w-full col-span-2" />
         </div>
       </div>
     </div>
@@ -69,9 +70,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
-          <img src="/images/lifestyle/01-waterfall-rocks.jpeg" alt="Waterfall in the jungle near Playa Venao" class="rounded-xl object-cover h-72 w-full col-span-2" />
-          <img src="/images/lifestyle/02-creek-forest.jpeg" alt="Creek running through tropical forest" class="rounded-xl object-cover h-48 w-full" />
-          <img src="/images/lifestyle/03-mother-child-beach-walk.jpeg" alt="Mother and child walking on the beach" class="rounded-xl object-cover h-48 w-full" />
+          <img src={`${base}images/lifestyle/01-waterfall-rocks.jpeg`} alt="Waterfall in the jungle near Playa Venao" class="rounded-xl object-cover h-72 w-full col-span-2" />
+          <img src={`${base}images/lifestyle/02-creek-forest.jpeg`} alt="Creek running through tropical forest" class="rounded-xl object-cover h-48 w-full" />
+          <img src={`${base}images/lifestyle/03-mother-child-beach-walk.jpeg`} alt="Mother and child walking on the beach" class="rounded-xl object-cover h-48 w-full" />
         </div>
         <div class="order-1 lg:order-2">
           <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">Nature & Wildlife</p>
@@ -128,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
         </div>
         <div>
-          <img src="/images/lifestyle/02-yoga-outdoor-class.jpeg" alt="Outdoor yoga class near the beach" class="rounded-xl object-cover h-96 w-full" />
+          <img src={`${base}images/lifestyle/02-yoga-outdoor-class.jpeg`} alt="Outdoor yoga class near the beach" class="rounded-xl object-cover h-96 w-full" />
         </div>
       </div>
     </div>
@@ -139,9 +140,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
-          <img src="/images/lifestyle/01-beach-football-night.jpeg" alt="Beach football game at night" class="rounded-xl object-cover h-56 w-full" />
-          <img src="/images/lifestyle/07-surfers-celebrating.jpeg" alt="Surfers celebrating together" class="rounded-xl object-cover h-56 w-full" />
-          <img src="/images/lifestyle/05-father-child-sunset-surf.jpeg" alt="Father and child at sunset with surf" class="rounded-xl object-cover h-56 w-full col-span-2" />
+          <img src={`${base}images/lifestyle/01-beach-football-night.jpeg`} alt="Beach football game at night" class="rounded-xl object-cover h-56 w-full" />
+          <img src={`${base}images/lifestyle/07-surfers-celebrating.jpeg`} alt="Surfers celebrating together" class="rounded-xl object-cover h-56 w-full" />
+          <img src={`${base}images/lifestyle/05-father-child-sunset-surf.jpeg`} alt="Father and child at sunset with surf" class="rounded-xl object-cover h-56 w-full col-span-2" />
         </div>
         <div class="order-1 lg:order-2">
           <p class="text-sm font-semibold uppercase tracking-widest text-ocean-600">Food & Community</p>
@@ -279,10 +280,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Playa Venao Living puts all of this at your doorstep. Modern apartments, community pool, and a lifestyle that most people only dream about.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/#residences" class="w-full sm:w-auto rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white hover:bg-ocean-500 transition-colors">
+        <a href={`${base}#residences`} class="w-full sm:w-auto rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white hover:bg-ocean-500 transition-colors">
           Explore Residences
         </a>
-        <a href="/#contact" class="w-full sm:w-auto rounded-lg border-2 border-ocean-600 px-8 py-4 text-sm font-semibold text-ocean-700 hover:bg-ocean-50 transition-colors">
+        <a href={`${base}#contact`} class="w-full sm:w-auto rounded-lg border-2 border-ocean-600 px-8 py-4 text-sm font-semibold text-ocean-700 hover:bg-ocean-50 transition-colors">
           Get in Touch
         </a>
       </div>

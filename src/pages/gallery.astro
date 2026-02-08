@@ -1,42 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 
 const categories = [
   {
     name: 'The Land',
     id: 'land',
     images: [
-      { src: '/images/land/01-our-land-topdown.jpeg', alt: 'Top-down aerial view of our development land' },
-      { src: '/images/land/02-our-land-with-surroundings.jpeg', alt: 'Aerial view of our land with surrounding area' },
-      { src: '/images/land/03-aerial-wide-coastline.jpeg', alt: 'Wide aerial view of the Playa Venao coastline' },
-      { src: '/images/land/04-aerial-land-angled.jpeg', alt: 'Angled aerial view of the development site' },
+      { src: `${base}images/land/01-our-land-topdown.jpeg`, alt: 'Top-down aerial view of our development land' },
+      { src: `${base}images/land/02-our-land-with-surroundings.jpeg`, alt: 'Aerial view of our land with surrounding area' },
+      { src: `${base}images/land/03-aerial-wide-coastline.jpeg`, alt: 'Wide aerial view of the Playa Venao coastline' },
+      { src: `${base}images/land/04-aerial-land-angled.jpeg`, alt: 'Angled aerial view of the development site' },
     ]
   },
   {
     name: 'The Lifestyle',
     id: 'lifestyle',
     images: [
-      { src: '/images/lifestyle/01-surfers-walking-to-ocean.jpeg', alt: 'Surfers walking to the ocean' },
-      { src: '/images/lifestyle/02-surfer-panama-flag-board.jpeg', alt: 'Surfer with Panama flag surfboard' },
-      { src: '/images/lifestyle/03-mother-child-beach-walk.jpeg', alt: 'Mother and child walking on the beach' },
-      { src: '/images/lifestyle/04-surfer-action-wave.jpeg', alt: 'Surfer riding a wave' },
-      { src: '/images/lifestyle/05-father-child-sunset-surf.jpeg', alt: 'Father and child at sunset with surfboards' },
-      { src: '/images/lifestyle/06-surfer-girls-walking.jpeg', alt: 'Surfer girls walking on the beach' },
-      { src: '/images/lifestyle/07-surfers-celebrating.jpeg', alt: 'Surfers celebrating together' },
-      { src: '/images/lifestyle/01-beach-football-night.jpeg', alt: 'Beach football game at night' },
-      { src: '/images/lifestyle/02-yoga-outdoor-class.jpeg', alt: 'Outdoor yoga class' },
-      { src: '/images/lifestyle/01-waterfall-rocks.jpeg', alt: 'Waterfall in the jungle' },
-      { src: '/images/lifestyle/02-creek-forest.jpeg', alt: 'Creek running through tropical forest' },
+      { src: `${base}images/lifestyle/01-surfers-walking-to-ocean.jpeg`, alt: 'Surfers walking to the ocean' },
+      { src: `${base}images/lifestyle/02-surfer-panama-flag-board.jpeg`, alt: 'Surfer with Panama flag surfboard' },
+      { src: `${base}images/lifestyle/03-mother-child-beach-walk.jpeg`, alt: 'Mother and child walking on the beach' },
+      { src: `${base}images/lifestyle/04-surfer-action-wave.jpeg`, alt: 'Surfer riding a wave' },
+      { src: `${base}images/lifestyle/05-father-child-sunset-surf.jpeg`, alt: 'Father and child at sunset with surfboards' },
+      { src: `${base}images/lifestyle/06-surfer-girls-walking.jpeg`, alt: 'Surfer girls walking on the beach' },
+      { src: `${base}images/lifestyle/07-surfers-celebrating.jpeg`, alt: 'Surfers celebrating together' },
+      { src: `${base}images/lifestyle/01-beach-football-night.jpeg`, alt: 'Beach football game at night' },
+      { src: `${base}images/lifestyle/02-yoga-outdoor-class.jpeg`, alt: 'Outdoor yoga class' },
+      { src: `${base}images/lifestyle/01-waterfall-rocks.jpeg`, alt: 'Waterfall in the jungle' },
+      { src: `${base}images/lifestyle/02-creek-forest.jpeg`, alt: 'Creek running through tropical forest' },
     ]
   },
   {
     name: 'The Plans',
     id: 'plans',
     images: [
-      { src: '/images/plans/01-apartment-type-A-floorplan.jpg', alt: 'Type A apartment floor plan' },
-      { src: '/images/plans/02-apartment-type-B-floorplan.jpg', alt: 'Type B apartment floor plan' },
-      { src: '/images/plans/03-first-floor-site-plan.jpg', alt: 'First floor site plan' },
-      { src: '/images/plans/06-front-rear-elevations-section.jpg', alt: 'Building elevations and section' },
+      { src: `${base}images/plans/01-apartment-type-A-floorplan.jpg`, alt: 'Type A apartment floor plan' },
+      { src: `${base}images/plans/02-apartment-type-B-floorplan.jpg`, alt: 'Type B apartment floor plan' },
+      { src: `${base}images/plans/03-first-floor-site-plan.jpg`, alt: 'First floor site plan' },
+      { src: `${base}images/plans/06-front-rear-elevations-section.jpg`, alt: 'Building elevations and section' },
     ]
   }
 ];
@@ -47,7 +48,7 @@ const categories = [
   <!-- Hero -->
   <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/land/02-our-land-with-surroundings.jpeg" alt="Aerial view of Playa Venao" class="h-full w-full object-cover" />
+      <img src={`${base}images/land/02-our-land-with-surroundings.jpeg`} alt="Aerial view of Playa Venao" class="h-full w-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
     </div>
     <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8 py-28">

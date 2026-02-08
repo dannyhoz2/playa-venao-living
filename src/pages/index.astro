@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Playa Venao Living — Modern Beachfront Apartments in Panama">
@@ -11,7 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Background Image -->
     <div class="absolute inset-0">
       <img
-        src="/images/land/03-aerial-wide-coastline.jpeg"
+        src={`${base}images/land/03-aerial-wide-coastline.jpeg`}
         alt="Aerial view of Playa Venao coastline"
         class="h-full w-full object-cover"
       />
@@ -34,7 +35,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Explore Residences
         </a>
         <a
-          href="/invest#roi-calculator"
+          href={`${base}invest#roi-calculator`}
           class="w-full sm:w-auto rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white hover:bg-white/20 transition-all duration-200"
         >
           Calculate Your Returns
@@ -131,7 +132,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/images/plans/01-apartment-type-A-floorplan.jpg"
+              src={`${base}images/plans/01-apartment-type-A-floorplan.jpg`}
               alt="Type A apartment floor plan - 46 square meter one bedroom"
               class="w-full rounded-2xl shadow-lg"
             />
@@ -193,12 +194,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <img
-            src="/images/plans/03-first-floor-site-plan.jpg"
+            src={`${base}images/plans/03-first-floor-site-plan.jpg`}
             alt="First floor site plan showing U-shaped building layout around central pool"
             class="w-full rounded-2xl shadow-lg"
           />
           <img
-            src="/images/plans/06-front-rear-elevations-section.jpg"
+            src={`${base}images/plans/06-front-rear-elevations-section.jpg`}
             alt="Building elevation showing front and rear views with pitched roofs"
             class="w-full rounded-2xl shadow-lg"
           />
@@ -244,10 +245,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="mt-16">
         <h3 class="text-xl font-bold text-gray-900 mb-6">Surf Culture</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <img src="/images/lifestyle/01-surfers-walking-to-ocean.jpeg" alt="Surfers walking to the ocean at Playa Venao" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/02-surfer-panama-flag-board.jpeg" alt="Surfer with Panama flag surfboard" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/04-surfer-action-wave.jpeg" alt="Surfer riding a wave" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/06-surfer-girls-walking.jpeg" alt="Surfer girls walking on beach" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/01-surfers-walking-to-ocean.jpeg`} alt="Surfers walking to the ocean at Playa Venao" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/02-surfer-panama-flag-board.jpeg`} alt="Surfer with Panama flag surfboard" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/04-surfer-action-wave.jpeg`} alt="Surfer riding a wave" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/06-surfer-girls-walking.jpeg`} alt="Surfer girls walking on beach" class="rounded-xl object-cover h-64 w-full" />
         </div>
         <p class="mt-4 text-gray-600 max-w-3xl">
           Playa Venao delivers consistent year-round waves for every skill level, from gentle beach breaks for beginners to powerful swells for experienced surfers. The water stays warm all year, and the local surf community is welcoming, vibrant, and genuinely international.
@@ -258,9 +259,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="mt-14">
         <h3 class="text-xl font-bold text-gray-900 mb-6">Wellness & Nature</h3>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <img src="/images/lifestyle/02-yoga-outdoor-class.jpeg" alt="Outdoor yoga class near the beach" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/01-waterfall-rocks.jpeg" alt="Waterfall in the jungle near Playa Venao" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/02-creek-forest.jpeg" alt="Creek running through tropical forest" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/02-yoga-outdoor-class.jpeg`} alt="Outdoor yoga class near the beach" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/01-waterfall-rocks.jpeg`} alt="Waterfall in the jungle near Playa Venao" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/02-creek-forest.jpeg`} alt="Creek running through tropical forest" class="rounded-xl object-cover h-64 w-full" />
         </div>
         <p class="mt-4 text-gray-600 max-w-3xl">
           Beyond the beach, the Azuero Peninsula is rich with jungle waterfalls, forest trails, and wildlife. Yoga retreats dot the area, whale watching runs from June to November, and sea turtle nesting season transforms the beaches into a natural spectacle. Nature is not a weekend trip here; it is your daily life.
@@ -271,10 +272,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="mt-14">
         <h3 class="text-xl font-bold text-gray-900 mb-6">Community</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <img src="/images/lifestyle/01-beach-football-night.jpeg" alt="Beach football game at night" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/07-surfers-celebrating.jpeg" alt="Surfers celebrating together" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/03-mother-child-beach-walk.jpeg" alt="Mother and child walking on the beach" class="rounded-xl object-cover h-64 w-full" />
-          <img src="/images/lifestyle/05-father-child-sunset-surf.jpeg" alt="Father and child at sunset surf" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/01-beach-football-night.jpeg`} alt="Beach football game at night" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/07-surfers-celebrating.jpeg`} alt="Surfers celebrating together" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/03-mother-child-beach-walk.jpeg`} alt="Mother and child walking on the beach" class="rounded-xl object-cover h-64 w-full" />
+          <img src={`${base}images/lifestyle/05-father-child-sunset-surf.jpeg`} alt="Father and child at sunset surf" class="rounded-xl object-cover h-64 w-full" />
         </div>
         <p class="mt-4 text-gray-600 max-w-3xl">
           What makes Playa Venao truly special is the community. Beach football under the lights, sunset sessions with friends, family afternoons by the shore. You will find a mix of locals, expats, nomads, and travelers who share a love for the simple things. It is easy to make friends here; it is hard to leave.
@@ -282,7 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="mt-12 text-center">
-        <a href="/lifestyle" class="inline-flex items-center gap-2 rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white hover:bg-ocean-500 transition-colors">
+        <a href={`${base}lifestyle`} class="inline-flex items-center gap-2 rounded-lg bg-ocean-600 px-8 py-4 text-sm font-semibold text-white hover:bg-ocean-500 transition-colors">
           Discover the Full Lifestyle
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
         </a>
@@ -369,7 +370,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <p class="mt-4 text-gray-600 leading-relaxed">
                     With projected annual rental income of $14,000-$22,000 per unit and property appreciation of 5-10% per year, the returns stack up favorably against comparable markets. Add Panama's 20-year property tax exemption for new construction and the USD-based economy, and the investment case is compelling.
                   </p>
-                  <a href="/invest" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ocean-700 hover:text-ocean-600">
+                  <a href={`${base}invest`} class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ocean-700 hover:text-ocean-600">
                     View Full Investment Analysis
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                   </a>
