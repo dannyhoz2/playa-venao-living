@@ -529,7 +529,7 @@ const base = import.meta.env.BASE_URL;
       <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
       <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.427, -80.165], 14);
+          var map = L.map('map', { scrollWheelZoom: false, zoomControl: false }).setView([7.4305, -80.194], 15);
 
           L.control.zoom({ position: 'topright' }).addTo(map);
 
@@ -554,26 +554,26 @@ const base = import.meta.env.BASE_URL;
             { lat: 7.436109, lng: -80.190583, icon: homeIcon, popup: '<div class="map-popup"><h3>🏡 Playa Venao Living</h3><p>Modern beachfront apartments<br>Your future home in paradise</p></div>', open: true },
 
             /* === SURF === */
-            { lat: 7.4265, lng: -80.1575, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf — beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
-            { lat: 7.4355, lng: -80.1680, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Eco Venao Surf School</h3><p>Surf lessons & board rentals</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4305, lng: -80.1940, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Playa Venao Main Break</h3><p>Year-round surf — beginner to advanced</p><span class="tag tag-surf">Surf</span></div>' },
+            { lat: 7.4342, lng: -80.2001, icon: icon('map-icon-surf','🏄'), popup: '<div class="map-popup"><h3>Eco Venao</h3><p>Eco-resort, surf lessons & board rentals</p><span class="tag tag-surf">Surf</span></div>' },
 
             /* === FOOD & DRINK === */
-            { lat: 7.4310, lng: -80.1610, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>Wao Jungle</h3><p>Restaurant & bar in jungle setting</p><span class="tag tag-food">Dining</span></div>' },
-            { lat: 7.4330, lng: -80.1850, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Casa de la Salida del Sol</h3><p>Beachfront café with breakfast & smoothies</p><span class="tag tag-food">Café</span></div>' },
+            { lat: 7.4363, lng: -80.1932, icon: icon('map-icon-food','🍽️'), popup: '<div class="map-popup"><h3>Wao Jungle</h3><p>Restaurant & bar in jungle setting</p><span class="tag tag-food">Dining</span></div>' },
+            { lat: 7.4335, lng: -80.1925, icon: icon('map-icon-food','☕'), popup: '<div class="map-popup"><h3>Sol Venao Café</h3><p>Beachfront café with breakfast & smoothies</p><span class="tag tag-food">Café</span></div>' },
 
             /* === STAYS === */
-            { lat: 7.4295, lng: -80.1535, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Playa Venao Hotel Resort</h3><p>Beachfront resort & restaurant</p><span class="tag tag-stay">Hotel</span></div>' },
-            { lat: 7.4240, lng: -80.1510, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Playa Venao</h3><p>Co-working, social hub & hostel</p><span class="tag tag-stay">Hostel</span></div>' },
-            { lat: 7.4215, lng: -80.1480, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Villa Marina Hotel</h3><p>Boutique hotel on the bay</p><span class="tag tag-stay">Hotel</span></div>' },
-            { lat: 7.4190, lng: -80.1455, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Azuero Lodge</h3><p>Eco-lodge, pool & tropical gardens</p><span class="tag tag-stay">Lodge</span></div>' },
+            { lat: 7.4333, lng: -80.1962, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Playa Venao Hotel Resort</h3><p>Beachfront resort & restaurant</p><span class="tag tag-stay">Hotel</span></div>' },
+            { lat: 7.4310, lng: -80.1887, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Selina Playa Venao</h3><p>Co-working, social hub & hostel</p><span class="tag tag-stay">Hostel</span></div>' },
+            { lat: 7.4262, lng: -80.1860, icon: icon('map-icon-stay','🏨'), popup: '<div class="map-popup"><h3>Villa Marina Lodge</h3><p>Boutique lodge & condos on the bay</p><span class="tag tag-stay">Lodge</span></div>' },
+            { lat: 7.4242, lng: -80.1848, icon: icon('map-icon-stay','🏕️'), popup: '<div class="map-popup"><h3>Azuero Lodge</h3><p>Eco-lodge, pool & tropical gardens</p><span class="tag tag-stay">Lodge</span></div>' },
 
             /* === NATURE === */
-            { lat: 7.4370, lng: -80.1720, icon: icon('map-icon-nature','🌿'), popup: '<div class="map-popup"><h3>Las Escobas del Venado</h3><p>Jungle trails & waterfall hike</p><span class="tag tag-nature">Nature</span></div>' },
-            { lat: 7.4380, lng: -80.1830, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' },
+            { lat: 7.4344, lng: -80.1993, icon: icon('map-icon-nature','🌿'), popup: '<div class="map-popup"><h3>Las Escobas del Venado</h3><p>Jungle trails & waterfall hike</p><span class="tag tag-nature">Nature</span></div>' },
+            { lat: 7.4375, lng: -80.1960, icon: icon('map-icon-nature','🐢'), popup: '<div class="map-popup"><h3>Sea Turtle Nesting Beach</h3><p>Nesting season: Jun–Nov</p><span class="tag tag-nature">Wildlife</span></div>' },
 
             /* === NEARBY BEACHES === */
-            { lat: 7.4320, lng: -80.1920, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Playa Madroñito</h3><p>Secluded beach — quiet & pristine</p><span class="tag tag-beach">Beach</span></div>' },
-            { lat: 7.4160, lng: -80.1400, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Bahía de Achotines</h3><p>Sheltered bay south of Venao</p><span class="tag tag-beach">Beach</span></div>' }
+            { lat: 7.4239, lng: -80.2143, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Playa Madroñito</h3><p>Secluded beach — quiet & pristine</p><span class="tag tag-beach">Beach</span></div>' },
+            { lat: 7.4181, lng: -80.1804, icon: icon('map-icon-beach','🏖️'), popup: '<div class="map-popup"><h3>Bahía de Achotines</h3><p>Sheltered bay south of Venao</p><span class="tag tag-beach">Beach</span></div>' }
           ];
 
           /* Add all markers */
@@ -585,7 +585,7 @@ const base = import.meta.env.BASE_URL;
           });
 
           /* Fit map to show all markers with padding */
-          map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
+          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 15 });
         });
       </script>
 
